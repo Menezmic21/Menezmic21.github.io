@@ -1,0 +1,50 @@
+
+<li
+  role="listitem"
+  {{- $itemClass := "" -}}
+  {{- if eq .level  1 -}}
+    {{- $itemClass = "item-hero" -}}
+  {{- else if eq .level 2 -}}
+    {{- $itemClass = "item-2up" -}}
+  {{- else if eq .level  3 -}}
+    {{- $itemClass = "item-3up" -}}
+  {{- end -}}
+  class="{{- printf "tile-item nr-scroll-animation %s" $itemClass -}}"
+  style="--nr-animation-transform-y:20%;"
+>
+  <a
+    href={{ .context.Permalink }}
+    class="tile large-load  medium-load small-load
+      {{ if eq .level 1 }}
+      tile-hero
+      {{ else if eq .level 2 }}
+      tile-2up
+      {{ else if eq .level 3 }}
+      tile-3up
+      {{ end }}
+      "
+    aria-label={{ .label }}
+  >
+    <div class="tile__media" aria-hidden="true">
+      {{- $src := .context.Params.cover | default site.Params.defaultCover -}}
+      {{- with .context.Resources.GetMatch (printf "%s" ($src)) -}}
+          {{- $src = .RelPermalink -}}
+      {{- end -}}
+      <img class="cover image" data-src="{{ $src }}" alt="lt"/>
+    </div>
+
+    <div class="tile__description" aria-hidden="true">
+      <div class="tile__head">
+        <div class="tile__category">
+          {{ if .context.Params.tags }}
+            {{ range first 1 .context.Params.tags }}
+              {{.}}
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="tile__headline">{{ .context.Title }}</div>
+      </div>
+      <div class="tile__timestamp icon-hide icon icon-before icon-clock">{{ .context.Date | time.Format ":date_long" }}</div>
+    </div>
+  </a>
+</li>

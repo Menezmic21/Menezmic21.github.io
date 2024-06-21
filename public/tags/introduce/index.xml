@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduce on iTheme</title>
+    <link>//localhost:1313/tags/introduce/</link>
+    <description>Recent content in Introduce on iTheme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Floyd Li</copyright>
+    <lastBuildDate>Sat, 25 Mar 2023 15:04:53 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/introduce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iTheme for Hugo</title>
+      <link>//localhost:1313/posts/hello-world/</link>
+      <pubDate>Sat, 25 Mar 2023 15:04:53 +0800</pubDate>
+      <guid>//localhost:1313/posts/hello-world/</guid>
+      <description>If you like this theme, please give me a star! Introduction 中文说明 An Apple style theme for Hugo, inspired by astro-air-blog Preview Demo Site Quick Start Before you start, make sure you have installed Hugo. Quick start with the demo site Here&amp;rsquo;s the demo site repo git clone --recurse-submodules https://github.com/floyd-li/itheme-demo-site.git my-site cd ./my-site &amp;amp;&amp;amp; hugo server -D Then you can visit http://localhost:1313 to see the demo site!</description>
+    </item>
+    <item>
+      <title>Markdown Syntax Example</title>
+      <link>//localhost:1313/posts/mark-down-syntax/</link>
+      <pubDate>Mon, 20 Mar 2023 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/mark-down-syntax/</guid>
+      <description>Headings&#xD;# H1 ## H2 ### H3 #### H4 ##### H5 ###### H6&#xD;H1&#xD;H2&#xD;H3&#xD;H4&#xD;H5&#xD;H6&#xD;Image&#xD;Image - Wide ![Image Wide|wide](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Big ![Image Big|big](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Inline ![Image Inline|inline](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg)&#xD;Image Wide&#xD;Image Big&#xD;Image Inline&#xD;Block Quotes&#xD;&amp;gt; You are young and life is long - Pink Floyd&#xD;You are young and life is long - Pink Floyd&#xA;Code Blocks&#xD;```javascript function say() { const greeting = &amp;#34;I&amp;#39;ll see you on the dark side of the moon&amp;#34;; console.</description>
+    </item>
+    <item>
+      <title>iTheme - 一个果味十足的Hugo主题</title>
+      <link>//localhost:1313/posts/hello-world-cn/</link>
+      <pubDate>Fri, 25 Mar 2022 15:00:53 +0800</pubDate>
+      <guid>//localhost:1313/posts/hello-world-cn/</guid>
+      <description>如果喜欢这个主题, 请给我点赞！ 介绍 English Readme 一个苹果味十足的Hugo主题，移植自astro-air-blog 预览 测试站点 快速开始 在开始之前，请先安</description>
+    </item>
+  </channel>
+</rss>

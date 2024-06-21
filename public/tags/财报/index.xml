@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>财报 on iTheme</title>
+    <link>//localhost:1313/tags/%E8%B4%A2%E6%8A%A5/</link>
+    <description>Recent content in 财报 on iTheme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Floyd Li</copyright>
+    <lastBuildDate>Tue, 17 Jan 2023 13:06:38 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E8%B4%A2%E6%8A%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apple 公布第一季度业绩</title>
+      <link>//localhost:1313/posts/apple-reports-first-quarter-results/</link>
+      <pubDate>Tue, 17 Jan 2023 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/apple-reports-first-quarter-results/</guid>
+      <description>加利福尼亚州，库比提诺 Apple 今日发布了截至 2022 年 12 月 31 日的 2023 财年第一季度财务业绩。公司公布本季度营收达到 1172 亿美元，同比下降 5%。本季度稀释后每股收</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>游戏 on iTheme</title>
+    <link>//localhost:1313/tags/%E6%B8%B8%E6%88%8F/</link>
+    <description>Recent content in 游戏 on iTheme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Floyd Li</copyright>
+    <lastBuildDate>Wed, 07 Dec 2022 13:06:38 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>毕业第一年：从学生向3D美术师的转变</title>
+      <link>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</link>
+      <pubDate>Wed, 07 Dec 2022 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</guid>
+      <description>我们都知道，无论哪个领域，离开学校进入职场的感觉有多么令人生畏。你具备合适的技能吗？你学到的技术能在你获得的工作中发挥作用吗？这足以让你夜不</description>
+    </item>
+    <item>
+      <title>UE5.1新功能在《堡垒之夜：大逃杀》第四章中的实战测试</title>
+      <link>//localhost:1313/posts/battle-testing-unreal-engine-5-1-s-new-features-on-fortnite-battle-royale-chapter-4/</link>
+      <pubDate>Thu, 27 Oct 2022 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/battle-testing-unreal-engine-5-1-s-new-features-on-fortnite-battle-royale-chapter-4/</guid>
+      <description>图片来自虚幻引擎官网 十二月初，当《堡垒之夜：大逃杀》第四章第一赛季发布时，玩家很难不注意到视觉保真度和细节得到了质的提升。这并不是巧合，通过</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>无边记 on iTheme</title>
+    <link>//localhost:1313/tags/%E6%97%A0%E8%BE%B9%E8%AE%B0/</link>
+    <description>Recent content in 无边记 on iTheme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Floyd Li</copyright>
+    <lastBuildDate>Mon, 27 Feb 2023 13:06:38 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E6%97%A0%E8%BE%B9%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apple 推出为头脑风暴和创意协作设计的全新强大 app 无边记</title>
+      <link>//localhost:1313/posts/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/</link>
+      <pubDate>Mon, 27 Feb 2023 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/</guid>
+      <description>无边记为 iPhone、iPad 和 Mac 提供了灵活多用的画布，在同一个地方汇聚对话主题、内容及灵感创意。 无边记是一款全新 app，今日正式推出，包括</description>
+    </item>
+  </channel>
+</rss>

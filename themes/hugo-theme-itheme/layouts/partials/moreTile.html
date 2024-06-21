@@ -1,0 +1,39 @@
+<!--
+ * @Description: 
+ * @Author: Floyd Li (floyd.li@outlook.com)
+ * @Date: 2023-03-02 17:37:17
+ * @LastEditors: Floyd Li (floyd.li@outlook.com)
+ * @LastEditTime: 2023-03-03 16:07:36
+-->
+<li
+  role="listitem"
+  class="tile-item item-list nr-scroll-animation"
+  style="--nr-animation-transform-y:20%;"
+>
+  <a
+    href={{ .context.Permalink }}
+    class="tile tile-list medium-load small-load large-load"
+    aria-label={label}
+  >
+    <div class="tile__media" aria-hidden="true">
+      {{- $src := .context.Params.cover | default site.Params.defaultCover -}}
+      {{- with .context.Resources.GetMatch (printf "%s" ($src)) -}}
+          {{- $src = .RelPermalink -}}
+      {{- end -}}
+      <img class="cover image" data-src="{{ $src }}" alt="lt"/>
+    </div>
+    <div class="tile__description" aria-hidden="true">
+      <div class="tile__head">
+        <div class="tile__category">
+          {{ if .context.Params.tags }}
+            {{ range first 1 .context.Params.tags }}
+              {{.}}
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="tile__headline">{{ .context.Title }}</div>
+      </div>
+      <div class="tile__timestamp icon-hide icon icon-before icon-clock">{{ .context.Date | time.Format ":date_long" }}</div>
+    </div>
+  </a>
+</li>

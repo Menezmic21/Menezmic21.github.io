@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-itheme"]
+	path = themes/hugo-theme-itheme
+	url = https://github.com/floyd-li/hugo-theme-itheme.git

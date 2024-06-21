@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>特写 on iTheme</title>
+    <link>//localhost:1313/tags/%E7%89%B9%E5%86%99/</link>
+    <description>Recent content in 特写 on iTheme</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Floyd Li</copyright>
+    <lastBuildDate>Wed, 01 Mar 2023 13:06:38 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E7%89%B9%E5%86%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From farm to sea: Conserving mangroves to protect local livelihoods and the planet</title>
+      <link>//localhost:1313/posts/apple/</link>
+      <pubDate>Wed, 01 Mar 2023 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/apple/</guid>
+      <description>在印度马哈拉施特拉邦，Apple 与 Applied Environmental Research Foundation 展开合作，对红树林进行保护与培育。这一海岸森林生态系统可以吸收和存储大气中的二氧化碳。 在马哈拉施特</description>
+    </item>
+    <item>
+      <title>毕业第一年：从学生向3D美术师的转变</title>
+      <link>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</link>
+      <pubDate>Wed, 07 Dec 2022 13:06:38 +0800</pubDate>
+      <guid>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</guid>
+      <description>我们都知道，无论哪个领域，离开学校进入职场的感觉有多么令人生畏。你具备合适的技能吗？你学到的技术能在你获得的工作中发挥作用吗？这足以让你夜不</description>
+    </item>
+  </channel>
+</rss>

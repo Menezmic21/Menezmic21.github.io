@@ -3,16 +3,17 @@ languageCode = 'en'
 defaultContentLanguage = "en"
 hasCJKLanguage = true
 enableEmoji = true
-title = 'iTheme'
-copyright = 'Floyd Li'
+title = 'Michael Menezes'
+copyright = 'Michael Menezes'
 theme = 'hugo-theme-itheme'
 paginate = 5
 [params]
-  defaultCover = 'https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg'
-  email = 'floyd.li@outlook.com'
+  ShowRSS = false
+  defaultCover = '../../../assets/images/post_default.jpg'
+  email = 'mnm5@rice.edu'
   [[params.socialMedia]]
-    name = 'Github'
-    url = 'https://github.com/floyd-li'
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/michaelmenezes21/'
   [[params.blogroll]]
-    name = '驭风笔记'
-    url = 'https://yufengbiji.com/'
+    name = 'Github'
+    url = 'https://github.com/menezmic21'

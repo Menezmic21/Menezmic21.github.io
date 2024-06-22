@@ -1,173 +1,75 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on iTheme</title>
+    <title>Tags on Michael Menezes</title>
     <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on iTheme</description>
+    <description>Recent content in Tags on Michael Menezes</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Floyd Li</copyright>
-    <lastBuildDate>Sat, 25 Mar 2023 15:04:53 +0800</lastBuildDate>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Fri, 21 Jun 2024 12:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Demo</title>
-      <link>//localhost:1313/tags/demo/</link>
+      <title>Code</title>
+      <link>//localhost:1313/tags/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/demo/</guid>
+      <guid>//localhost:1313/tags/code/</guid>
       <description></description>
     </item>
     <item>
-      <title>Introduce</title>
-      <link>//localhost:1313/tags/introduce/</link>
+      <title>Database</title>
+      <link>//localhost:1313/tags/database/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/introduce/</guid>
+      <guid>//localhost:1313/tags/database/</guid>
       <description></description>
     </item>
     <item>
-      <title>Markdown</title>
-      <link>//localhost:1313/tags/markdown/</link>
+      <title>Leetcode</title>
+      <link>//localhost:1313/tags/leetcode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/markdown/</guid>
+      <guid>//localhost:1313/tags/leetcode/</guid>
       <description></description>
     </item>
     <item>
-      <title>Apple</title>
-      <link>//localhost:1313/tags/apple/</link>
+      <title>Award-Winning</title>
+      <link>//localhost:1313/tags/award-winning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/apple/</guid>
+      <guid>//localhost:1313/tags/award-winning/</guid>
       <description></description>
     </item>
     <item>
-      <title>保育</title>
-      <link>//localhost:1313/tags/%E4%BF%9D%E8%82%B2/</link>
+      <title>Data Science</title>
+      <link>//localhost:1313/tags/data-science/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E4%BF%9D%E8%82%B2/</guid>
+      <guid>//localhost:1313/tags/data-science/</guid>
       <description></description>
     </item>
     <item>
-      <title>印度</title>
-      <link>//localhost:1313/tags/%E5%8D%B0%E5%BA%A6/</link>
+      <title>Datathon</title>
+      <link>//localhost:1313/tags/datathon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E5%8D%B0%E5%BA%A6/</guid>
+      <guid>//localhost:1313/tags/datathon/</guid>
       <description></description>
     </item>
     <item>
-      <title>新闻稿</title>
-      <link>//localhost:1313/tags/%E6%96%B0%E9%97%BB%E7%A8%BF/</link>
+      <title>Machine Learning</title>
+      <link>//localhost:1313/tags/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E6%96%B0%E9%97%BB%E7%A8%BF/</guid>
+      <guid>//localhost:1313/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
-      <title>特写</title>
-      <link>//localhost:1313/tags/%E7%89%B9%E5%86%99/</link>
+      <title>Research</title>
+      <link>//localhost:1313/tags/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E7%89%B9%E5%86%99/</guid>
+      <guid>//localhost:1313/tags/research/</guid>
       <description></description>
     </item>
     <item>
-      <title>环保</title>
-      <link>//localhost:1313/tags/%E7%8E%AF%E4%BF%9D/</link>
+      <title>Public Speaking</title>
+      <link>//localhost:1313/tags/public-speaking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E7%8E%AF%E4%BF%9D/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>红树林</title>
-      <link>//localhost:1313/tags/%E7%BA%A2%E6%A0%91%E6%9E%97/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E7%BA%A2%E6%A0%91%E6%9E%97/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HomePod</title>
-      <link>//localhost:1313/tags/homepod/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/homepod/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>无边记</title>
-      <link>//localhost:1313/tags/%E6%97%A0%E8%BE%B9%E8%AE%B0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E6%97%A0%E8%BE%B9%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>财报</title>
-      <link>//localhost:1313/tags/%E8%B4%A2%E6%8A%A5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E8%B4%A2%E6%8A%A5/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>功能</title>
-      <link>//localhost:1313/tags/%E5%8A%9F%E8%83%BD/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E5%8A%9F%E8%83%BD/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>动画</title>
-      <link>//localhost:1313/tags/%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E5%8A%A8%E7%94%BB/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>广播与实况</title>
-      <link>//localhost:1313/tags/%E5%B9%BF%E6%92%AD%E4%B8%8E%E5%AE%9E%E5%86%B5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E5%B9%BF%E6%92%AD%E4%B8%8E%E5%AE%9E%E5%86%B5/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>虚幻引擎</title>
-      <link>//localhost:1313/tags/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>3d</title>
-      <link>//localhost:1313/tags/3d/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/3d/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>影视</title>
-      <link>//localhost:1313/tags/%E5%BD%B1%E8%A7%86/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E5%BD%B1%E8%A7%86/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>教育</title>
-      <link>//localhost:1313/tags/%E6%95%99%E8%82%B2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E6%95%99%E8%82%B2/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>游戏</title>
-      <link>//localhost:1313/tags/%E6%B8%B8%E6%88%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E6%B8%B8%E6%88%8F/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IPhone 14</title>
-      <link>//localhost:1313/tags/iphone-14/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/iphone-14/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>摄影</title>
-      <link>//localhost:1313/tags/%E6%91%84%E5%BD%B1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/%E6%91%84%E5%BD%B1/</guid>
+      <guid>//localhost:1313/tags/public-speaking/</guid>
       <description></description>
     </item>
   </channel>

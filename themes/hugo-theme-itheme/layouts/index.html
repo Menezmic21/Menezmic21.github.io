@@ -1,26 +1,50 @@
 {{ define "main" }}
 {{ $pages := where .Site.RegularPages "Params.plain" "ne" true }}
-    <section class="everydayfeed">
-    <div class="section-content">
-      <h2 class="section-head">{{ i18n "latestArticles" }}</h2>
-      <ul role="list" class="section-tiles">
-        {{ range first 1 $pages }}
-          {{ $level := 1 }}
-          {{ partial "tile.html" (dict "context" . "level" $level) }}
-        {{ end }}
 
-        {{ range first 4 ( after 1 $pages) }}
-          {{ $level := 2 }}
-          {{ partial "tile.html" (dict "context" . "level" $level) }}
-        {{ end }}
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-        {{ range first 6 ( after 5 $pages) }}
-          {{ $level := 3 }}
-          {{ partial "tile.html" (dict "context" . "level" $level) }}
-        {{ end }}
-      </ul>
+<section>
+  <div style="position: relative;">
+    <img src="assets/images/mainpage.png" alt="Standing on Apartment Roof with Houston Skyline" style="width: 100%; height: auto;">
+    <div style="position: absolute; left: 40%; top: 15%; font-size: 2.5vmax; padding-right: 1vw">
+      <h1 style="color: white; display: inline">Hello there!</h1><h1 class="reveal-type" style="color: white; display: inline"> Welcome to my personal website. Here you'll find some projects I have worked on and other things I like.</h1>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger)
+  const splitTypes = document.querySelectorAll('.reveal-type')
+
+  splitTypes.forEach((char, i) => {
+    const text = new SplitType(char, { types: 'words'})
+
+    gsap.from(text.words, {
+      scrollTrigger: {
+        trigger: char,
+        start: 'top 20%',
+        end: 'top 5%',
+        scrub: true,
+        markers: false
+      },
+      opacity: 0,
+      stagger: 0.1
+    })
+  })
+
+  const lenis = new Lenis()
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+</script>
+
 {{- if site.Params.ShowMore -}}
   <section class="more-from-newsroom">
     <div class="section-content">

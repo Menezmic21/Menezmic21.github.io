@@ -1,97 +1,104 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on iTheme</title>
+    <title>Posts on Michael Menezes</title>
     <link>//localhost:1313/posts/</link>
-    <description>Recent content in Posts on iTheme</description>
+    <description>Recent content in Posts on Michael Menezes</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Floyd Li</copyright>
-    <lastBuildDate>Sat, 25 Mar 2023 15:04:53 +0800</lastBuildDate>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Fri, 21 Jun 2024 12:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>iTheme for Hugo</title>
-      <link>//localhost:1313/posts/hello-world/</link>
-      <pubDate>Sat, 25 Mar 2023 15:04:53 +0800</pubDate>
-      <guid>//localhost:1313/posts/hello-world/</guid>
-      <description>If you like this theme, please give me a star! Introduction 中文说明 An Apple style theme for Hugo, inspired by astro-air-blog Preview Demo Site Quick Start Before you start, make sure you have installed Hugo. Quick start with the demo site Here&amp;rsquo;s the demo site repo git clone --recurse-submodules https://github.com/floyd-li/itheme-demo-site.git my-site cd ./my-site &amp;amp;&amp;amp; hugo server -D Then you can visit http://localhost:1313 to see the demo site!</description>
+      <title>Leetcode Submissions</title>
+      <link>//localhost:1313/posts/leetcode-submissions/</link>
+      <pubDate>Fri, 21 Jun 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/leetcode-submissions/</guid>
+      <description>Leetcode logo&#xD;Link to REPO.&#xA;Here, you&amp;rsquo;ll find problems solved using a variety of data structures, algorithms, and approaches.&#xA;Most problems were coded in Java.&#xA;Through solving these problems, I have reinforced the knowledge I&amp;rsquo;ve gained from class, become better able to identify which problem-solving strategy to use, and how to implement it quickly. My favorite techniques are two pointers (binary search included) and backtracking for how versatile they are.</description>
     </item>
     <item>
-      <title>Markdown Syntax Example</title>
-      <link>//localhost:1313/posts/mark-down-syntax/</link>
-      <pubDate>Mon, 20 Mar 2023 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/mark-down-syntax/</guid>
-      <description>Headings&#xD;# H1 ## H2 ### H3 #### H4 ##### H5 ###### H6&#xD;H1&#xD;H2&#xD;H3&#xD;H4&#xD;H5&#xD;H6&#xD;Image&#xD;Image - Wide ![Image Wide|wide](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Big ![Image Big|big](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg) Image - Inline ![Image Inline|inline](https://www.apple.com.cn/newsroom/images/apple-logo_black.jpg.landing-regular_2x.jpg)&#xD;Image Wide&#xD;Image Big&#xD;Image Inline&#xD;Block Quotes&#xD;&amp;gt; You are young and life is long - Pink Floyd&#xD;You are young and life is long - Pink Floyd&#xA;Code Blocks&#xD;```javascript function say() { const greeting = &amp;#34;I&amp;#39;ll see you on the dark side of the moon&amp;#34;; console.</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/optima_lab_twist/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/optima_lab_twist/</guid>
+      <description>Transformer architecture&#xD;This research project seeks to evaluate the effectiveness of Independent Subnetwork Training (IST) methods on the Transformer architecture. A transformer is a type of neural network that is often used for natural language processing. Transformers are made up of attention heads which are modules that &amp;ldquo;learn&amp;rdquo; how which &amp;ldquo;words&amp;rdquo; in a sentence are &amp;ldquo;important.&amp;rdquo;&#xA;To explain exactly what this research project does, I will first explain machine learning in general.</description>
     </item>
     <item>
-      <title>From farm to sea: Conserving mangroves to protect local livelihoods and the planet</title>
-      <link>//localhost:1313/posts/apple/</link>
-      <pubDate>Wed, 01 Mar 2023 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/apple/</guid>
-      <description>在印度马哈拉施特拉邦，Apple 与 Applied Environmental Research Foundation 展开合作，对红树林进行保护与培育。这一海岸森林生态系统可以吸收和存储大气中的二氧化碳。 在马哈拉施特</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/optima_lab_unlearning/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/optima_lab_unlearning/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>Apple 推出为头脑风暴和创意协作设计的全新强大 app 无边记</title>
-      <link>//localhost:1313/posts/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/</link>
-      <pubDate>Mon, 27 Feb 2023 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/</guid>
-      <description>无边记为 iPhone、iPad 和 Mac 提供了灵活多用的画布，在同一个地方汇聚对话主题、内容及灵感创意。 无边记是一款全新 app，今日正式推出，包括</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_10th_shiva/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_10th_shiva/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>Apple 推出新款 HomePod，带来突破性音质与智能体验</title>
-      <link>//localhost:1313/posts/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/</link>
-      <pubDate>Mon, 27 Feb 2023 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/</guid>
-      <description>HomePod 汇集了多项 Apple 创新技术、Siri 智能和智能家居功能，为用户带来前所未有的聆听体验。 加利福尼亚州，库比提诺Apple 今日宣布推出 HomePod</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_11th_delta/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_11th_delta/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>Apple 公布第一季度业绩</title>
-      <link>//localhost:1313/posts/apple-reports-first-quarter-results/</link>
-      <pubDate>Tue, 17 Jan 2023 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/apple-reports-first-quarter-results/</guid>
-      <description>加利福尼亚州，库比提诺 Apple 今日发布了截至 2022 年 12 月 31 日的 2023 财年第一季度财务业绩。公司公布本季度营收达到 1172 亿美元，同比下降 5%。本季度稀释后每股收</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_12th_armageddon/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_armageddon/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>2023年VR游戏周即将到来！</title>
-      <link>//localhost:1313/posts/vr-games-week-2023-starts-next-week/</link>
-      <pubDate>Tue, 27 Dec 2022 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/vr-games-week-2023-starts-next-week/</guid>
-      <description>PlayStation VR2即将于下周发布。为表庆祝，我们准备介绍数部即将登陆此平台的虚幻引擎VR游戏，以及一些准备登陆Meta Quest、PCVR等平台的虚幻</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_12th_nimbus/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_nimbus/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>毕业第一年：从学生向3D美术师的转变</title>
-      <link>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</link>
-      <pubDate>Wed, 07 Dec 2022 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/the-first-year-out-moving-from-student-to-3d-artist/</guid>
-      <description>我们都知道，无论哪个领域，离开学校进入职场的感觉有多么令人生畏。你具备合适的技能吗？你学到的技术能在你获得的工作中发挥作用吗？这足以让你夜不</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_9th_ray/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_9th_ray/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>用 iPhone 14 拍摄：摄影佳作激发创作灵感，定格精彩人像、自然与城市风光</title>
-      <link>//localhost:1313/posts/captured-on-iphone-14-photographers-inspire-iphone-users-to-capture-portraits-landscapes-city-scenes-and-stunning-videos/</link>
-      <pubDate>Sun, 27 Nov 2022 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/captured-on-iphone-14-photographers-inspire-iphone-users-to-capture-portraits-landscapes-city-scenes-and-stunning-videos/</guid>
-      <description>小北 使用 iPhone 14 Pro 4800 万像素主摄于福州拍摄。 通过 iPhone 14 Pro Max，iPhone 14 Pro，iPhone 14 以及 iPhone 14 Plus 上突破性创新的摄像头系统，中国的摄影师</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/science_fair_11th/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/science_fair_11th/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>虚幻引擎5.1带来电影、广播、动画和实况活动新功能</title>
-      <link>//localhost:1313/posts/unreal-engine-5-1-delivers-new-features-for-filmmaking-broadcast-animation-and-live-events/</link>
-      <pubDate>Sat, 12 Nov 2022 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/unreal-engine-5-1-delivers-new-features-for-filmmaking-broadcast-animation-and-live-events/</guid>
-      <description>随着虚幻引擎5.1的发布，它所带来的改进将使所有行业的创作者受益。在这篇博文中，我们将特别关注真人与动画影视内容（包括虚拟制片和LED舞台项</description>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/science_fair_9th/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/science_fair_9th/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
     </item>
     <item>
-      <title>UE5.1新功能在《堡垒之夜：大逃杀》第四章中的实战测试</title>
-      <link>//localhost:1313/posts/battle-testing-unreal-engine-5-1-s-new-features-on-fortnite-battle-royale-chapter-4/</link>
-      <pubDate>Thu, 27 Oct 2022 13:06:38 +0800</pubDate>
-      <guid>//localhost:1313/posts/battle-testing-unreal-engine-5-1-s-new-features-on-fortnite-battle-royale-chapter-4/</guid>
-      <description>图片来自虚幻引擎官网 十二月初，当《堡垒之夜：大逃杀》第四章第一赛季发布时，玩家很难不注意到视觉保真度和细节得到了质的提升。这并不是巧合，通过</description>
+      <title>Rice Datathon 2024: Oil Production Prediction</title>
+      <link>//localhost:1313/posts/datathon_sophomore/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_sophomore/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;Inspiration&#xD;Oil is ubiquitous. From the plastics used in smartphones to the gas that keeps our homes warm, oil drives America moving forward. Living in Houston, a major oil center, we understand the importance of oil in daily life. We took on the Chevron track to investigate how oil well characteristics can help predict peak production enabling oil companies to make informed decisions and run more efficiently.</description>
     </item>
     <item>
-      <title>iTheme - 一个果味十足的Hugo主题</title>
-      <link>//localhost:1313/posts/hello-world-cn/</link>
-      <pubDate>Fri, 25 Mar 2022 15:00:53 +0800</pubDate>
-      <guid>//localhost:1313/posts/hello-world-cn/</guid>
-      <description>如果喜欢这个主题, 请给我点赞！ 介绍 English Readme 一个苹果味十足的Hugo主题，移植自astro-air-blog 预览 测试站点 快速开始 在开始之前，请先安</description>
+      <title>Rice Datathon 2023: Breast Cancer Equity</title>
+      <link>//localhost:1313/posts/datathon_freshman/</link>
+      <pubDate>Sun, 29 Jan 2023 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_freshman/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;What it does and how we built it&#xD;We first cleaned the data given, focusing on the most recent population numbers from 2019, as well as limiting demographics to females, since they are the ones who receive mammograms, and limiting facility locations to the mainland 50 states. We then calculated the expected number of women who could be diagnosed with breast cancer in each state using incidence rates from an external dataset from the National Cancer Institute.</description>
+    </item>
+    <item>
+      <title>Houston Museum of Natural Science Internship</title>
+      <link>//localhost:1313/posts/hmns_internship/</link>
+      <pubDate>Sat, 15 Jun 2019 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/hmns_internship/</guid>
+      <description>HMNS dinosaur exhibit&#xD;Link to HMNS.&#xA;What I did&#xD;During the summer of 2019, I worked as an intern in the Astronomy department. My daily duties consisted of leading guided tours for museum visitors and summer camp attendees. In addition to this, I conducted surveys and analyzed the results to scaffold future tours and planetarium shows. I was lucky to have interned with the Houston Museum of Natural Science (HMNS) in 2019 as it was the 60th anniversary of Apollo.</description>
     </item>
   </channel>
 </rss>

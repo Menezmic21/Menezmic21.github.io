@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on Michael Menezes</title>
+    <link>//localhost:1313/tags/code/</link>
+    <description>Recent content in Code on Michael Menezes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Fri, 21 Jun 2024 12:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode Submissions</title>
+      <link>//localhost:1313/posts/leetcode-submissions/</link>
+      <pubDate>Fri, 21 Jun 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/leetcode-submissions/</guid>
+      <description>Leetcode logo&#xD;Link to REPO.&#xA;Here, you&amp;rsquo;ll find problems solved using a variety of data structures, algorithms, and approaches.&#xA;Most problems were coded in Java.&#xA;Through solving these problems, I have reinforced the knowledge I&amp;rsquo;ve gained from class, become better able to identify which problem-solving strategy to use, and how to implement it quickly. My favorite techniques are two pointers (binary search included) and backtracking for how versatile they are.</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/optima_lab_twist/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/optima_lab_twist/</guid>
+      <description>&#xD;Transformer architecture&#xD;What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/optima_lab_unlearning/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/optima_lab_unlearning/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_10th_shiva/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_10th_shiva/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_11th_delta/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_11th_delta/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_12th_armageddon/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_armageddon/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_12th_nimbus/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_nimbus/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/robotics_9th_ray/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_9th_ray/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/science_fair_11th/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/science_fair_11th/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <link>//localhost:1313/posts/science_fair_9th/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/science_fair_9th/</guid>
+      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+    </item>
+    <item>
+      <title>Rice Datathon 2024: Oil Production Prediction</title>
+      <link>//localhost:1313/posts/datathon_sophomore/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_sophomore/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;Inspiration&#xD;Oil is ubiquitous. From the plastics used in smartphones to the gas that keeps our homes warm, oil drives America moving forward. Living in Houston, a major oil center, we understand the importance of oil in daily life. We took on the Chevron track to investigate how oil well characteristics can help predict peak production enabling oil companies to make informed decisions and run more efficiently.</description>
+    </item>
+    <item>
+      <title>Rice Datathon 2023: Breast Cancer Equity</title>
+      <link>//localhost:1313/posts/datathon_freshman/</link>
+      <pubDate>Sun, 29 Jan 2023 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_freshman/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;What it does and how we built it&#xD;We first cleaned the data given, focusing on the most recent population numbers from 2019, as well as limiting demographics to females, since they are the ones who receive mammograms, and limiting facility locations to the mainland 50 states. We then calculated the expected number of women who could be diagnosed with breast cancer in each state using incidence rates from an external dataset from the National Cancer Institute.</description>
+    </item>
+  </channel>
+</rss>

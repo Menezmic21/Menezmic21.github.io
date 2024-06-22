@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Award-Winning on Michael Menezes</title>
+    <link>//localhost:1313/tags/award-winning/</link>
+    <description>Recent content in Award-Winning on Michael Menezes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Sat, 20 Jan 2024 12:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/award-winning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rice Datathon 2024: Oil Production Prediction</title>
+      <link>//localhost:1313/posts/datathon_sophomore/</link>
+      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_sophomore/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;Inspiration&#xD;Oil is ubiquitous. From the plastics used in smartphones to the gas that keeps our homes warm, oil drives America moving forward. Living in Houston, a major oil center, we understand the importance of oil in daily life. We took on the Chevron track to investigate how oil well characteristics can help predict peak production enabling oil companies to make informed decisions and run more efficiently.</description>
+    </item>
+    <item>
+      <title>Rice Datathon 2023: Breast Cancer Equity</title>
+      <link>//localhost:1313/posts/datathon_freshman/</link>
+      <pubDate>Sun, 29 Jan 2023 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datathon_freshman/</guid>
+      <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;What it does and how we built it&#xD;We first cleaned the data given, focusing on the most recent population numbers from 2019, as well as limiting demographics to females, since they are the ones who receive mammograms, and limiting facility locations to the mainland 50 states. We then calculated the expected number of women who could be diagnosed with breast cancer in each state using incidence rates from an external dataset from the National Cancer Institute.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Michael Menezes</title>
+    <link>//localhost:1313/tags/database/</link>
+    <description>Recent content in Database on Michael Menezes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Fri, 21 Jun 2024 12:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode Submissions</title>
+      <link>//localhost:1313/posts/leetcode-submissions/</link>
+      <pubDate>Fri, 21 Jun 2024 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/leetcode-submissions/</guid>
+      <description>Leetcode logo&#xD;Link to REPO.&#xA;Here, you&amp;rsquo;ll find problems solved using a variety of data structures, algorithms, and approaches.&#xA;Most problems were coded in Java.&#xA;Through solving these problems, I have reinforced the knowledge I&amp;rsquo;ve gained from class, become better able to identify which problem-solving strategy to use, and how to implement it quickly. My favorite techniques are two pointers (binary search included) and backtracking for how versatile they are.</description>
+    </item>
+  </channel>
+</rss>

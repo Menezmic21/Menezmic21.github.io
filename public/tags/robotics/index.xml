@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robotics on Michael Menezes</title>
+    <link>//localhost:1313/tags/robotics/</link>
+    <description>Recent content in Robotics on Michael Menezes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Michael Menezes</copyright>
+    <lastBuildDate>Sun, 01 May 2022 12:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Texas Torque: Armageddon</title>
+      <link>//localhost:1313/posts/robotics_12th_armageddon/</link>
+      <pubDate>Sun, 01 May 2022 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_armageddon/</guid>
+      <description>Armageddon&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;After years of disuse and being scrapped for parts, the team decided to restore the robot. I updated the code of the robot. This involved configuring the Xbox controllers to run motors/actuate pneumatics; tuning Proportional-Integral-Derivative (PID) control loops; and adding cameras to implement computer vision. In addition, despite the drive train on Armageddon being an H-drive, I was able to simulate a swerve drive using an Inertial Measurement Unit.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Nimbus</title>
+      <link>//localhost:1313/posts/robotics_12th_nimbus/</link>
+      <pubDate>Sat, 01 Jan 2022 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_nimbus/</guid>
+      <description>Nimbus&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;As vice-president, I oversaw the entire team. I helped solve specific problems within subteams while also mediating disputes between subteams. Some other duties I had were training the underclassmen to make them self-sufficient and designing the magazine (the mechanism responsible for moving the ball from the intake to the shooter) for the robot. Since I was the former CAD lead, I helped the CAD team and programming find parameters for their mechanisms.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Delta</title>
+      <link>//localhost:1313/posts/robotics_11th_delta/</link>
+      <pubDate>Fri, 01 Jan 2021 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_11th_delta/</guid>
+      <description>Delta&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;Due to COVID, last year&amp;rsquo;s season was cut short and this year&amp;rsquo;s season was last year&amp;rsquo;s challenge repeated with compatitions made virtual. As the CAD lead, I was in charge of the Game Design Challenge. We had to prepare materials for a hypothetical game that we would like to see. We even went so far as to make our own 3D animation for a game reveal.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Shiva</title>
+      <link>//localhost:1313/posts/robotics_10th_shiva/</link>
+      <pubDate>Wed, 01 Jan 2020 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_10th_shiva/</guid>
+      <description>Shiva&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;During a general Computer-Aided Design (CAD) training over the summer, the CAD lead saw potential and scouted me. From then, I started to follow the CAD lead and got a closer look into the design of the robot. The CAD lead asked me to design the color wheel subsystem. This subsystem interfaced with a wheel of fortune like obstacle on the field.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Ray</title>
+      <link>//localhost:1313/posts/robotics_9th_ray/</link>
+      <pubDate>Tue, 01 Jan 2019 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_9th_ray/</guid>
+      <description>Ray&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;As a high school freshman, I spent the season gaining experience on the mechanical subteam. I built a couple of prototypes and learned how electronics interfaced with the physical world thorugh motors.&#xA;I also got the opportunity to work on the competition robot (which is rare as a freshman). It wasn&amp;rsquo;t much, but I helped assemble the drive train. Here, I learned about how our programming team used the input from physical rotary encorders to determine how fast our robot was traveling.</description>
+    </item>
+  </channel>
+</rss>

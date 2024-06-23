@@ -23,5 +23,33 @@
       <guid>//localhost:1313/posts/datathon_freshman/</guid>
       <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;What it does and how we built it&#xD;We first cleaned the data given, focusing on the most recent population numbers from 2019, as well as limiting demographics to females, since they are the ones who receive mammograms, and limiting facility locations to the mainland 50 states. We then calculated the expected number of women who could be diagnosed with breast cancer in each state using incidence rates from an external dataset from the National Cancer Institute.</description>
     </item>
+    <item>
+      <title>Texas Torque: Nimbus</title>
+      <link>//localhost:1313/posts/robotics_12th_nimbus/</link>
+      <pubDate>Sat, 01 Jan 2022 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_nimbus/</guid>
+      <description>Nimbus&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;As vice-president, I oversaw the entire team. I helped solve specific problems within subteams while also mediating disputes between subteams. Some other duties I had were training the underclassmen to make them self-sufficient and designing the magazine (the mechanism responsible for moving the ball from the intake to the shooter) for the robot. Since I was the former CAD lead, I helped the CAD team and programming find parameters for their mechanisms.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Delta</title>
+      <link>//localhost:1313/posts/robotics_11th_delta/</link>
+      <pubDate>Fri, 01 Jan 2021 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_11th_delta/</guid>
+      <description>Delta&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;Due to COVID, last year&amp;rsquo;s season was cut short and this year&amp;rsquo;s season was last year&amp;rsquo;s challenge repeated with compatitions made virtual. As the CAD lead, I was in charge of the Game Design Challenge. We had to prepare materials for a hypothetical game that we would like to see. We even went so far as to make our own 3D animation for a game reveal.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Shiva</title>
+      <link>//localhost:1313/posts/robotics_10th_shiva/</link>
+      <pubDate>Wed, 01 Jan 2020 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_10th_shiva/</guid>
+      <description>Shiva&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;During a general Computer-Aided Design (CAD) training over the summer, the CAD lead saw potential and scouted me. From then, I started to follow the CAD lead and got a closer look into the design of the robot. The CAD lead asked me to design the color wheel subsystem. This subsystem interfaced with a wheel of fortune like obstacle on the field.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Ray</title>
+      <link>//localhost:1313/posts/robotics_9th_ray/</link>
+      <pubDate>Tue, 01 Jan 2019 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_9th_ray/</guid>
+      <description>Ray&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;As a high school freshman, I spent the season gaining experience on the mechanical subteam. I built a couple of prototypes and learned how electronics interfaced with the physical world thorugh motors.&#xA;I also got the opportunity to work on the competition robot (which is rare as a freshman). It wasn&amp;rsquo;t much, but I helped assemble the drive train. Here, I learned about how our programming team used the input from physical rotary encorders to determine how fast our robot was traveling.</description>
+    </item>
   </channel>
 </rss>

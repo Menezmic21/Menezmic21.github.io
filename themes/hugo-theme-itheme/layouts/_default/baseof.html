@@ -2,6 +2,9 @@
 <html class="js no-touch  progressive-image  no-reduced-motion progressive" lang="{{ .Site.Language.Lang }}">
   <head>
     {{ partial "head.html" . }}
+    {{ if .Param "math" }}
+      {{ partial "math.html" . }}
+    {{ end }}
   </head>
   <body class="{{ if .IsPage }} page-article {{ else }} page-landing {{ end }}  {{ if eq .Page.Params.theme "dark" }} theme-dark {{ end }}">
     <header>

@@ -1,7 +1,7 @@
 ---
 title: "Rice Datathon 2023: Breast Cancer Equity"
 date: 2023-01-29T12:00:00+00:00
-description: "Award-winning portfolio featuring visualizations of mammography facilities in the US."
+description: "Award-winning portfolio featuring visualizations of mammography facilities in the US"
 author: "Brandon Huang, Michael Menezes, Henry Pu, Albert Zhu"
 tags: ["Code", "Datathon", "Data Science", "Award-Winning"]
 theme: "light"

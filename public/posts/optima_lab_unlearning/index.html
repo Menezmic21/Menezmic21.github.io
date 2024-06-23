@@ -9,8 +9,8 @@
 
     <meta name="keyword" content=""><meta property="og:url" content="//localhost:1313/posts/optima_lab_unlearning/">
   <meta property="og:site_name" content="Michael Menezes">
-  <meta property="og:title" content="OptimaLab: Transformer with Independent Subnetwork Training">
-  <meta property="og:description" content="Applied IST techniques to efficiently train transformer architectures in a distributed scenario.">
+  <meta property="og:title" content="OptimaLab: Machine Unlearning">
+  <meta property="og:description" content="Submission to NeurIPS 2023 Machine Unlearning Challenge co-hosted by Google">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -19,7 +19,7 @@
     <meta property="article:tag" content="Code">
     <meta property="article:tag" content="Machine Learning">
     <meta property="article:tag" content="Research">
-<title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+<title>OptimaLab: Machine Unlearning</title>
 
     <link rel="canonical" href="//localhost:1313/posts/optima_lab_unlearning/">
 
@@ -36,6 +36,17 @@
     
 
 </head>
+    
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
   </head>
   <body class=" page-article   ">
     <header>
@@ -105,11 +116,11 @@
             </div>
             <div class="pagetitle component">
               <div class="component-content">
-                <h1 class="hero-headline">OptimaLab: Transformer with Independent Subnetwork Training</h1>
+                <h1 class="hero-headline">OptimaLab: Machine Unlearning</h1>
               </div>
             </div>
             <div class="component  featured-subhead ">
-              <div class="component-content">Applied IST techniques to efficiently train transformer architectures in a distributed scenario.</div>
+              <div class="component-content">Submission to NeurIPS 2023 Machine Unlearning Challenge co-hosted by Google</div>
             </div>
 
             <div class="tagssheet component">
@@ -143,32 +154,65 @@
             
             
             
-            <!-- raw HTML omitted -->
+            <p class="component-content component">
+
+
+
+
+
+
+
+
+<figure class="image component image-fullbleed body-copy-wide nr-scroll-animation nr-scroll-animation--on image-big">  <div class="component-content">
+    <div class="image-sharesheet">
+      <div class="image image-load image-asset image-24c6ce2ec9fb4ef532c3f42b4ba9e5a1" id="lht24c6ce2ec9fb4ef532c3f42b4ba9e5a1">
+        <picture  class="picture">
+          <img class="picture-image" data-src="/assets/images/machine_unlearning.jpg" alt="Machine unlearning kaggle competition"  />
+        </picture>
+      </div>
+    </div>
+    <div class="image-description">
+      <div class="image-caption">
+        Machine unlearning kaggle competition
+      </div>
+    </div>
+  </div>
+</figure>
+</p>
+<p class="component-content component">Link to <a href="https://www.kaggle.com/menezmic/machine-unlearning-competition-submission">KAGGLE</a>.</p>
 <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<blockquote>
+<p class="component-content component">Deep learning has recently driven tremendous progress in a wide array of applications, ranging from realistic image generation and impressive retrieval systems to language models that can hold human-like conversations. While this progress is very exciting, the widespread use of deep neural network models requires caution: researchers should seek to develop AI technologies responsibly by understanding and mitigating potential risks, such as the propagation and amplification of unfair biases and protecting user privacy.</p>
+</blockquote>
+<blockquote>
+<p class="component-content component">This competition, which is has been selected for the NeurIPS'23 competition track, considers a realistic scenario in which an age predictor has been trained on face images, and, after training, a certain subset of the training images must be forgotten to protect the privacy or rights of the individuals concerned.</p>
+</blockquote>
 
 <div class="component-content pagebody component">
   <h1 id="what-i-did" class="pagebody-header">
     What I did
   </h1>
-</div>
+</div><p class="component-content component">I competed in the NeurIPS 2023 Machine Unlearning Challenge co-hosted by Google. To build my submission, I surveyed and implemented innovative techniques such as SCRUB (a distillation-based unlearning technique) and metrics like MIA accuracy. I also incorporated noise injection to accelerate fine-tuning and improve generalization.</p>
+
 <div class="component-content pagebody component">
   <h1 id="what-i-used" class="pagebody-header">
     What I used
   </h1>
-</div>
+</div><p class="component-content component">The submission notebook used Pandas, Plotly, and Scipy for data analysis.</p>
+
 <div class="component-content pagebody component">
   <h1 id="challenges" class="pagebody-header">
     Challenges
   </h1>
-</div>
+</div><p class="component-content component">The greatest challenge with this challenge was the lack of literature surrounding the topic. This makes sense given Google and NeurIPS cohosted this challenge to find the most effective technique for machine unlearning (techniques for removing a training example&rsquo;s influence from a model without impacting model performance). To counter the lack of literature, I read up on papers from surrounding fields like differential privacy too. This challenge had a focus on rapid prototyping with me throwing tricks at the wall and seeing what stuck.</p>
+
           </div><div class="component">
             <div class="component-content">
               <div class="article-copyright">
                 <p class="content">
                   Copyright: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>
                 </p>
-                <p class="content">Author:  Chen Dun, Tasos Kyrillidis, Michael Menezes, Hamza Shili, Barbara Su </p>
+                <p class="content">Author:  Michael Menezes, Hamza Shili </p>
                 <p class="content">Posted on:  January 20, 2024</p>
               </div>
             </div>

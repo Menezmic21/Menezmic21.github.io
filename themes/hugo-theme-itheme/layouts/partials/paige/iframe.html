@@ -1,0 +1,13 @@
+{{ $params := . }}
+
+{{ $fullscreen := $params.fullscreen }}
+{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $src := $params.src }}
+{{ $title := $params.title }}
+
+<iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} {{ with $src }} src="{{ . | safeURL }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} 
+style=" display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vmin;
+        height: 40vmin;"></iframe>

@@ -1,0 +1,28 @@
+baseURL = '/'
+languageCode = 'en'
+defaultContentLanguage = "en"
+hasCJKLanguage = true
+enableEmoji = true
+title = 'Michael Menezes'
+copyright = 'Michael Menezes'
+theme = 'hugo-theme-itheme'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+paginate = 5
+[params]
+  math = true
+  ShowRSS = false
+  defaultCover = '../../../assets/images/post_default.jpg'
+  email = 'mnm5@rice.edu'
+  [[params.socialMedia]]
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/michaelmenezes21/'
+  [[params.blogroll]]
+    name = 'Github'
+    url = 'https://github.com/menezmic21'

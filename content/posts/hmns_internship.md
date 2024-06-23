@@ -1,7 +1,7 @@
 ---
 title: "Houston Museum of Natural Science Internship"
 date: 2019-06-15T12:00:00+00:00
-description: "Internship at the Houston Museum of Natural Science."
+description: "Internship at the Houston Museum of Natural Science"
 author: "Michael Menezes"
 tags: ["Data Science", "Public Speaking"]
 theme: "light"

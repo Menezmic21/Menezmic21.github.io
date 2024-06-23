@@ -1,7 +1,7 @@
 (() => {
   // ns-params:@params
   var baseURL = "//localhost:1313/";
-  var params = { blogroll: [{ name: "Github", url: "https://github.com/menezmic21" }], defaultcover: "../../../assets/images/post_default.jpg", email: "mnm5@rice.edu", showcopyright: true, showmore: true, showrss: false, socialmedia: [{ name: "LinkedIn", url: "https://www.linkedin.com/in/michaelmenezes21/" }] };
+  var params = { blogroll: [{ name: "Github", url: "https://github.com/menezmic21" }], defaultcover: "../../../assets/images/post_default.jpg", email: "mnm5@rice.edu", math: true, showcopyright: true, showmore: true, showrss: false, socialmedia: [{ name: "LinkedIn", url: "https://www.linkedin.com/in/michaelmenezes21/" }] };
 
   // <stdin>
   var { appid, appkey, searchindex: indexName, enabled } = params.algolia;

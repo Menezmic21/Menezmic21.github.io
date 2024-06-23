@@ -7,70 +7,21 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Michael Menezes</copyright>
-    <lastBuildDate>Sat, 20 Jan 2024 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Feb 2024 12:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
       <link>//localhost:1313/posts/optima_lab_twist/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Feb 2024 12:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/optima_lab_twist/</guid>
-      <description>&#xD;Transformer architecture&#xD;What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+      <description>Transformer architecture&#xD;This research project seeks to evaluate the effectiveness of Independent Subnetwork Training (IST) methods on the Transformer architecture. A transformer is a type of neural network that is often used for natural language processing. Transformers are made up of attention heads which are modules that &amp;ldquo;learn&amp;rdquo; how which &amp;ldquo;words&amp;rdquo; in a sentence are &amp;ldquo;important.&amp;rdquo;&#xA;To explain exactly what this research project does, I will first explain machine learning in general.</description>
     </item>
     <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
+      <title>OptimaLab: Machine Unlearning</title>
       <link>//localhost:1313/posts/optima_lab_unlearning/</link>
       <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/optima_lab_unlearning/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/robotics_10th_shiva/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/robotics_10th_shiva/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/robotics_11th_delta/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/robotics_11th_delta/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/robotics_12th_armageddon/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/robotics_12th_armageddon/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/robotics_12th_nimbus/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/robotics_12th_nimbus/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/robotics_9th_ray/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/robotics_9th_ray/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/science_fair_11th/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/science_fair_11th/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
-    </item>
-    <item>
-      <title>OptimaLab: Transformer with Independent Subnetwork Training</title>
-      <link>//localhost:1313/posts/science_fair_9th/</link>
-      <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/science_fair_9th/</guid>
-      <description> What I did&#xD;What I used&#xD;Challenges&#xD;</description>
+      <description>Machine unlearning kaggle competition&#xD;Link to KAGGLE.&#xA;Deep learning has recently driven tremendous progress in a wide array of applications, ranging from realistic image generation and impressive retrieval systems to language models that can hold human-like conversations. While this progress is very exciting, the widespread use of deep neural network models requires caution: researchers should seek to develop AI technologies responsibly by understanding and mitigating potential risks, such as the propagation and amplification of unfair biases and protecting user privacy.</description>
     </item>
     <item>
       <title>Rice Datathon 2024: Oil Production Prediction</title>
@@ -78,6 +29,13 @@
       <pubDate>Sat, 20 Jan 2024 12:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/datathon_sophomore/</guid>
       <description>Rice datathon splash screen&#xD;Link to DEVPOST.&#xA;Inspiration&#xD;Oil is ubiquitous. From the plastics used in smartphones to the gas that keeps our homes warm, oil drives America moving forward. Living in Houston, a major oil center, we understand the importance of oil in daily life. We took on the Chevron track to investigate how oil well characteristics can help predict peak production enabling oil companies to make informed decisions and run more efficiently.</description>
+    </item>
+    <item>
+      <title>Texas Torque: Armageddon</title>
+      <link>//localhost:1313/posts/robotics_12th_armageddon/</link>
+      <pubDate>Sun, 01 May 2022 12:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/robotics_12th_armageddon/</guid>
+      <description>Armageddon&#xD;Link to BLUE ALLIANCE.&#xA;What I did&#xD;After years of disuse and being scrapped for parts, the team decided to restore the robot. I updated the code of the robot. This involved configuring the Xbox controllers to run motors/actuate pneumatics; tuning Proportional-Integral-Derivative (PID) control loops; and adding cameras to implement computer vision. In addition, despite the drive train on Armageddon being an H-drive, I was able to simulate a swerve drive using an Inertial Measurement Unit.</description>
     </item>
   </channel>
 </rss>

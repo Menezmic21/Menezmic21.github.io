@@ -1,7 +1,7 @@
 ---
 title: "Leetcode Submissions"
 date: 2024-06-21T12:00:00+00:00
-description: "A Github repository serving as a database of my Leetcode submissions."
+description: "A Github repository serving as a database of my Leetcode submissions"
 author: "Michael Menezes"
 tags: ["Code", "Leetcode", "Database"]
 theme: "light"

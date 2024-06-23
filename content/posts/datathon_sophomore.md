@@ -1,7 +1,7 @@
 ---
 title: "Rice Datathon 2024: Oil Production Prediction"
 date: 2024-01-20T12:00:00+00:00
-description: "Award-winning portfolio featuring machine learning models that predict peak oil production alongside data and model visualizations."
+description: "Award-winning portfolio featuring machine learning models that predict peak oil production alongside data and model visualizations"
 author: "Sanya Garg, Surina Kishinchandani, Michael Menezes, Marko Tanevski"
 tags: ["Code", "Datathon", "Data Science", "Machine Learning", "Award-Winning"]
 theme: "light"

@@ -3,7 +3,7 @@ title: "A Slick Model: Modeling the Dispersion of Oil Slicks in the Ocean"
 date: 2019-01-30T12:00:00+00:00
 description: "2019 Science Fair Submission"
 author: "Michael Menezes"
-tags: ["Research"]
+tags: ["Research", "Award-Winning"]
 theme: "light"
 featured: true
 cover: "../../../assets/images/science_fair_2019.jpg"

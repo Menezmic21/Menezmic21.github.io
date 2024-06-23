@@ -3,7 +3,7 @@ title: "SIR Mobility Metapopulation Models: Designing an Epidemic Model"
 date: 2021-01-30T12:00:00+00:00
 description: "2021 Science Fair Submission"
 author: "Michael Menezes"
-tags: ["Code", "Research"]
+tags: ["Code", "Award-Winning", "Research"]
 theme: "light"
 featured: true
 cover: "../../../assets/images/science_fair_2021.jpg"

@@ -4,6 +4,8 @@
     other = "目录"
 [about]
     other = "关于"
+[resume]
+    other = "恢复"
 [latestArticles]
     other = "最新文章"
 [moreArticles]

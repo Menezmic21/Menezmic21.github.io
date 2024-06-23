@@ -1,9 +1,11 @@
 [home]
     other = "Inicio"
 [posts]
-    other = "Artículos"
+    other = "Proyectos"
 [about]
     other = "Acerca de"
+[resume]
+    other = "Reanudar"
 [latestArticles]
     other = "Artículos Recientes"
 [moreArticles]

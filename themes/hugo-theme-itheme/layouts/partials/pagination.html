@@ -13,7 +13,7 @@
     </a>
     <div class="pagination-ctrl__info">
       <span class="pagination-ctrl__info__text pagination-ctrl__info--current">{{ $pag.PageNumber }}</span>
-      <span class="pagination-ctrl__info__text"> {{ i18n "of" }} </span>
+      <span class="pagination-ctrl__info__text" style="white-space: pre;"> {{ i18n "of" }} </span>
       <span class="pagination-ctrl__info__text pagination-ctrl__info--total">{{ $pag.TotalPages}}</span>
     </div>
     {{ if $pag.HasNext}}

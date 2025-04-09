@@ -6,9 +6,9 @@ author: "Chen Dun, Tasos Kyrillidis, Michael Menezes, Hamza Shili, Barbara Su"
 tags: ["Code", "Machine Learning", "Research"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/transformers.png"
+cover: "/transformers.png"
 ---
-![Transformer architecture](/assets/images/transformers.png)
+![Transformer architecture](/transformers.png)
 
 <!-- Link to [REPO](https://github.com/Menezmic21/leetcode-submissions). -->
 

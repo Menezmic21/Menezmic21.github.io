@@ -6,9 +6,9 @@ author: "Michael Menezes, Hamza Shili"
 tags: ["Code", "Machine Learning", "Research"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/machine_unlearning.jpg"
+cover: "/machine_unlearning.jpg"
 ---
-![Machine unlearning kaggle competition](/assets/images/machine_unlearning.jpg)
+![Machine unlearning kaggle competition](/machine_unlearning.jpg)
 
 Link to [KAGGLE](https://www.kaggle.com/menezmic/machine-unlearning-competition-submission).
 

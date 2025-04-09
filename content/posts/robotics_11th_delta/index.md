@@ -6,9 +6,9 @@ author: "Texas Torque, Michael Menezes"
 tags: ["Robotics", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/robotics_delta.jpg"
+cover: "/robotics_delta.jpg"
 ---
-![Delta](/assets/images/robotics_delta.jpg)
+![Delta](/robotics_delta.jpg)
 
 Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2021).
 

@@ -6,9 +6,9 @@ author: "Michael Menezes"
 tags: ["Data Science", "Public Speaking"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/hmns.png"
+cover: "/hmns.png"
 ---
-![HMNS dinosaur exhibit](/assets/images/hmns.png)
+![HMNS dinosaur exhibit](/hmns.png)
 
 Link to [HMNS](https://www.hmns.org/).
 

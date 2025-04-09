@@ -6,9 +6,9 @@ author: "Texas Torque, Michael Menezes"
 tags: ["Robotics", "Code", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/robotics_nimbus.jpg"
+cover: "/robotics_nimbus.jpg"
 ---
-![Nimbus](/assets/images/robotics_nimbus.jpg)
+![Nimbus](/robotics_nimbus.jpg)
 
 Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2022).
 
@@ -36,9 +36,9 @@ During my time as vice-president, our team grew from sixty members to 120 member
 # Extra resources
 
 Below are some resources I put together while on the robotics team:
-- [TORQUE DESIGN FORMULA SHEET](/assets/text/torque_design_formula_sheet.pdf).
-- [MOTOR MASTERY PROBLEM SET KEY](/assets/text/motor_mastery_problem_set_key.pdf).
-- [GEAR COMBINATION DERIVATION](/assets/text/gear_combination_derivation.pdf).
-- [GEARBOX REDUCTION DERIVATION](/assets/text/gearbox_reduction_derivation.pdf).
-- [MOTOR SPIN UP DERIVATION](/assets/text/motor_spin_up_derivation.pdf).
-- [HOW TO WRAP A CYLINDER](/assets/text/spiral_tape.pdf).
+- [TORQUE DESIGN FORMULA SHEET](/torque_design_formula_sheet.pdf).
+- [MOTOR MASTERY PROBLEM SET KEY](/motor_mastery_problem_set_key.pdf).
+- [GEAR COMBINATION DERIVATION](/gear_combination_derivation.pdf).
+- [GEARBOX REDUCTION DERIVATION](/gearbox_reduction_derivation.pdf).
+- [MOTOR SPIN UP DERIVATION](/motor_spin_up_derivation.pdf).
+- [HOW TO WRAP A CYLINDER](/spiral_tape.pdf).

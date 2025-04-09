@@ -6,9 +6,9 @@ author: "Texas Torque, Michael Menezes"
 tags: ["Robotics", "Code", "Machine Learning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/robotics_armageddon.jpg"
+cover: "/robotics_armageddon.jpg"
 ---
-![Armageddon](/assets/images/robotics_armageddon.jpg)
+![Armageddon](/robotics_armageddon.jpg)
 
 Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2018).
 
@@ -19,8 +19,8 @@ Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2018).
 
 After years of disuse and being scrapped for parts, the team decided to restore the robot. I updated the code of the robot. This involved configuring the Xbox controllers to run motors/actuate pneumatics; tuning Proportional-Integral-Derivative (PID) control loops; and adding cameras to implement computer vision. In addition, despite the drive train on Armageddon being an H-drive, I was able to simulate a swerve drive using an Inertial Measurement Unit. 
 
-{{< paige/image width="60vmin" src="/assets/images/operator_controller.png" >}}
-{{< paige/image width="60vmin" src="/assets/images/driver_controller.png" >}}
+{{< paige/image width="60vmin" src="/operator_controller.png" >}}
+{{< paige/image width="60vmin" src="/driver_controller.png" >}}
 
 # What I used
 

@@ -6,9 +6,9 @@ author: "Michael Menezes"
 tags: ["Code", "Leetcode", "Database"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/leetcode_card.png"
+cover: "/leetcode_card.png"
 ---
-![Leetcode logo](/assets/images/leetcode_large.jpg)
+![Leetcode logo](/leetcode_large.jpg)
 
 Link to [REPO](https://github.com/Menezmic21/leetcode-submissions).
 

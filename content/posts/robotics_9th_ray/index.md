@@ -6,9 +6,9 @@ author: "Texas Torque, Michael Menezes"
 tags: ["Robotics", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/robotics_ray.jpg"
+cover: "/robotics_ray.jpg"
 ---
-![Ray](/assets/images/robotics_ray.jpg)
+![Ray](/robotics_ray.jpg)
 
 Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2019).
 
@@ -19,15 +19,15 @@ Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2019).
 
 As a high school freshman, I spent the season gaining experience on the mechanical subteam. I built a couple of prototypes and learned how electronics interfaced with the physical world thorugh motors.
 
-{{< paige/image width="60vmin" src="/assets/images/gearbox.png" >}}
+{{< paige/image width="60vmin" src="/gearbox.png" >}}
 {{< paige/gallery align="start" >}}
-{{< paige/image width="20vmin" src="/assets/images/elevator.png" >}}
-{{< paige/image width="40vmin" src="/assets/images/frisbee.png" >}}
+{{< paige/image width="20vmin" src="/elevator.png" >}}
+{{< paige/image width="40vmin" src="/frisbee.png" >}}
 {{< /paige/gallery >}}
 
 I also got the opportunity to work on the competition robot (which is rare as a freshman). It wasn't much, but I helped assemble the drive train. Here, I learned about how our programming team used the input from physical rotary encorders to determine how fast our robot was traveling.
 
-{{< paige/image width="60vmin" src="/assets/images/drivetrain.png" >}}
+{{< paige/image width="60vmin" src="/drivetrain.png" >}}
 
 # What I used
 

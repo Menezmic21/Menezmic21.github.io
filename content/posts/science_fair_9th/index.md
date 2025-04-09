@@ -6,11 +6,11 @@ author: "Michael Menezes"
 tags: ["Research", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/science_fair_2019.jpg"
+cover: "/science_fair_2019.jpg"
 ---
-![SIR model with two communities](/assets/images/science_fair_2019.jpg)
+![SIR model with two communities](/science_fair_2019.jpg)
 
-Link to [PAPER](/assets/text/science_fair_2019_technical_paper.pdf).
+Link to [PAPER](/science_fair_2019_technical_paper.pdf).
 
 <!-- Descriptive paragraph of project -->
 Oil spills cause millions of dollars in damages and destroy habitats. These repercussions highlight the need to contain oil spills quickly. Oil dispersion models are a set of procedures that model the dispersion of spills. Though oil dispersion models currently exist, these models require a lot of computational power. This project proposed a simple mathematical model to represent the dispersion of oil slicks.

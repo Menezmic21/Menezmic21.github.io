@@ -6,9 +6,9 @@ author: "Brandon Huang, Michael Menezes, Henry Pu, Albert Zhu"
 tags: ["Code", "Datathon", "Data Science", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/datathon_2023.jpg"
+cover: "/datathon_2023.jpg"
 ---
-![Rice datathon splash screen](/assets/images/datathon_2023.jpg)
+![Rice datathon splash screen](/datathon_2023.jpg)
 
 Link to [DEVPOST](https://devpost.com/software/choropleth-maps-of-cancer-density-per-hospital-in-each-state).
 

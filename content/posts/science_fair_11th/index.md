@@ -6,9 +6,9 @@ author: "Michael Menezes"
 tags: ["Code", "Award-Winning", "Research"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/science_fair_2021.jpg"
+cover: "/science_fair_2021.jpg"
 ---
-![SIR model with two communities](/assets/images/science_fair_2021.jpg)
+![SIR model with two communities](/science_fair_2021.jpg)
 
 <!-- Descriptive paragraph of project -->
 Over the past century, there has been a continual increase in the probability of pandemics as a result of heightened global travel and urbanization. These pandemics have sever repercussions which decrease the labor force, amplify social tensions, and augment partisanship. In order to concentrate mitigation efforts, accurate epidemic forecasts are essential. In particular to this study, metapopulation models are of interest as they incorporate how individuals travel between communities providing a deeper understanding of how epidemics spread. 

@@ -1,0 +1,16 @@
+.full-width-span {
+    width: 100%;
+    display: block;
+    background-color: lightblue;
+    text-align: center;
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure it's on top */
+}

@@ -6,9 +6,9 @@ author: "Texas Torque, Michael Menezes"
 tags: ["Robotics", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/robotics_shiva.jpg"
+cover: "/robotics_shiva.jpg"
 ---
-![Shiva](/assets/images/robotics_shiva.jpg)
+![Shiva](/robotics_shiva.jpg)
 
 Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2020).
 
@@ -19,7 +19,7 @@ Link to [BLUE ALLIANCE](https://www.thebluealliance.com/team/1477/2020).
 
 During a general Computer-Aided Design (CAD) training over the summer, the CAD lead saw potential and scouted me. From then, I started to follow the CAD lead and got a closer look into the design of the robot. The CAD lead asked me to design the color wheel subsystem. This subsystem interfaced with a wheel of fortune like obstacle on the field. It had to spin the wheel to a certain color. For our robot to fit in the trench while still being able to reach the wheel. The robot had to deploy spinner mechanism from a folded in position. However, we also had a motor limit. So, I implemented the mechanism deployment and spinning using a coaxial design. 
 
-{{< paige/image width="60vmin" src="/assets/images/wof.png" >}}
+{{< paige/image width="60vmin" src="/wof.png" >}}
 
 # What I used
 

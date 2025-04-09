@@ -18,7 +18,7 @@ paginate = 5
 [params]
   math = true
   ShowRSS = false
-  defaultCover = '../../../assets/images/post_default.jpg'
+  defaultCover = '/images/post_default.jpg'
   email = 'mnm5@rice.edu'
   [[params.socialMedia]]
     name = 'LinkedIn'

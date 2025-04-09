@@ -6,9 +6,9 @@ author: "Sanya Garg, Surina Kishinchandani, Michael Menezes, Marko Tanevski"
 tags: ["Code", "Datathon", "Data Science", "Machine Learning", "Award-Winning"]
 theme: "light"
 featured: true
-cover: "../../../assets/images/datathon_2024.png"
+cover: "/datathon_2024.png"
 ---
-![Rice datathon splash screen](/assets/images/datathon_2024.png)
+![Rice datathon splash screen](/datathon_2024.png)
 
 Link to [DEVPOST](https://devpost.com/software/super-models-squared-chevron-track).
 

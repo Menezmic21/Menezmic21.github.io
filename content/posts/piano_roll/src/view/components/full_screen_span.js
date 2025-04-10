@@ -9,14 +9,13 @@
 export class FullScreenSpan extends HTMLElement {
     // Web component boilerplate
     controller = null;
-    fullScreenSpan = null;
+    innerContainer = null;
 
     /**
      * Creates an instance of fullScreenSpan.
      */
     constructor() {
         super();
-        this.fullScreenSpan = document.querySelector('.full-screen-span');
     }
 
     /**
@@ -25,16 +24,18 @@ export class FullScreenSpan extends HTMLElement {
     connectedCallback() {
         this.controller = new AbortController();
         const options = { signal: this.controller.signal };
+
+        this.innerContainer = this.querySelector(".full-screen-span");
     
         /* Register event handlers */
-        this.fullScreenSpan.addEventListener('click', () => { // Arrow function here
+        this.addEventListener('click', () => { // Arrow function here
             if (!document.fullscreenElement) {
-                if (this.fullScreenSpan.requestFullscreen) {
-                    this.fullScreenSpan.requestFullscreen();
-                } else if (this.fullScreenSpan.webkitRequestFullscreen) { /* Safari */
-                    this.fullScreenSpan.webkitRequestFullscreen();
-                } else if (this.fullScreenSpan.msRequestFullscreen) { /* IE11 */
-                    this.fullScreenSpan.msRequestFullscreen();
+                if (this.requestFullscreen) {
+                    this.requestFullscreen();
+                } else if (this.webkitRequestFullscreen) { /* Safari */
+                    this.webkitRequestFullscreen();
+                } else if (this.msRequestFullscreen) { /* IE11 */
+                    this.msRequestFullscreen();
                 }
             } else {
                 if (document.exitFullscreen) {
@@ -48,25 +49,25 @@ export class FullScreenSpan extends HTMLElement {
         });
     
         // Optionally add a class for fullscreen styling
-        this.fullScreenSpan.addEventListener('fullscreenchange', () => { // Arrow function here
+        this.addEventListener('fullscreenchange', () => { // Arrow function here
             if (document.fullscreenElement) {
-                this.fullScreenSpan.classList.add('fullscreen');
+                this.innerContainer.classList.add('fullscreen');
             } else {
-                this.fullScreenSpan.classList.remove('fullscreen');
+                this.innerContainer.classList.remove('fullscreen');
             }
         });
-        this.fullScreenSpan.addEventListener('webkitfullscreenchange', () => { // Arrow function here
+        this.addEventListener('webkitfullscreenchange', () => { // Arrow function here
             if (document.webkitFullscreenElement) {
-                this.fullScreenSpan.classList.add('fullscreen');
+                this.innerContainer.classList.add('fullscreen');
             } else {
-                this.fullScreenSpan.classList.remove('fullscreen');
+                this.innerContainer.classList.remove('fullscreen');
             }
         });
-        this.fullScreenSpan.addEventListener('msfullscreenchange', () => { // Arrow function here
+        this.addEventListener('msfullscreenchange', () => { // Arrow function here
             if (document.msFullscreenElement) {
-                this.fullScreenSpan.classList.add('fullscreen');
+                this.innerContainer.classList.add('fullscreen');
             } else {
-                this.fullScreenSpan.classList.remove('fullscreen');
+                this.innerContainer.classList.remove('fullscreen');
             }
         });
     }

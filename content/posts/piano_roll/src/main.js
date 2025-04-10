@@ -1,4 +1,4 @@
-import { FullScreenSpan } from "./full_screen_span.js";
+import { Controller } from "./controller.js";
 
 /**
  * Initial entry to point of the application.
@@ -7,9 +7,8 @@ import { FullScreenSpan } from "./full_screen_span.js";
  * listeners for workspace and channel interactions.
  */
 async function main() {
-    // Register the custom element
-    customElements.define('full-screen-span', FullScreenSpan);
-    const fullscreenspan = new FullScreenSpan();
+    const controller = new Controller();
+    controller.initialize();
 }
   
 /* Register event handler to run after the page is fully loaded. */

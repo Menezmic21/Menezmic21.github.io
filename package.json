@@ -1,3 +1,22 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "@tonejs/midi": "^2.0.28",
+    "midi.js": "^0.3.1",
+    "smplr": "^0.16.1",
+    "tone": "^15.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hugo": "hugo",
+    "parcel": "parcel build content/posts/piano_roll/src/main.js --dist-dir public/dist/piano_roll",
+    "clean": "if exist public (rd /s /q public)",
+    "server": "npm run clean && npm run parcel && hugo server --noHTTPCache --ignoreCache --disableFastRender",
+    "build": "npm run parcel && npm run hugo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
 }

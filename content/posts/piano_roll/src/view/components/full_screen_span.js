@@ -26,6 +26,7 @@ export class FullScreenSpan extends HTMLElement {
         const options = { signal: this.controller.signal };
 
         this.innerContainer = this.querySelector(".full-screen-span");
+        this.pianoRollContainer = this.querySelector("piano-roll-container");
     
         /* Register event handlers */
         this.addEventListener('click', () => { // Arrow function here
@@ -46,6 +47,21 @@ export class FullScreenSpan extends HTMLElement {
                     document.msExitFullscreen();
                 }
             }
+
+            const resizeObserver = new ResizeObserver(entries => {
+                // Loop through the observed entries (in case multiple elements are observed)
+                for (let entry of entries) {
+                  // Access the new dimensions
+                  const width = entry.contentRect.width;
+                  const height = entry.contentRect.height;
+              
+                  // Your event handling logic here
+                //   console.log(`Span size changed: width=${width}, height=${height}`);
+                  this.pianoRollContainer.resize(width, height);
+                }
+            });
+    
+            resizeObserver.observe(this.innerContainer);
         });
     
         // Optionally add a class for fullscreen styling

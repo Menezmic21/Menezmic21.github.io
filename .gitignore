@@ -4,5 +4,12 @@
 # Package Files
 node_modules/
 
+# Bundled Files
+dist/
+
+# Caches
+.cache/
+.parcel-cache
+
 # Built website
 public/

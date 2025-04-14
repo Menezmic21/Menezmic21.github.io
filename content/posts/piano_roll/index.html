@@ -1,7 +1,7 @@
 ---
 title: "Piano Roll"
 date: 2025-04-09T12:00:00+00:00
-description: "Piano MIDI visualizer"
+description: "Piano MIDIjs visualizer"
 author: "Michael Menezes"
 tags: ["Code"]
 theme: "light"
@@ -11,15 +11,34 @@ featured: true
 <!-- Pseudo Head -->
 
 <link rel="stylesheet" href="./styles/styles.css">
-<script defer type="module" src="src/main.js"></script>
+<script defer type="module" src="/dist/piano_roll/main.js"></script>
 
 <!-- Pseudo Body -->
 
-<full-screen-span>
+<input type="file" id="midi-file-input" accept=".mid,.midi">
+<!-- <button id="convert-button">Convert</button> -->
+<!-- <div id="error-message"></div> -->
+<button id="play-button">Play</button>
+<!-- <input type="range" id="scrub-slider" min="0" value="0" step="0.01"> -->
+
+<!-- <button id="playButton">Play Sound</button> -->
+<!-- <a href="#" onClick="MIDIjsjs.play('/midi/Frieren_the_Slayer_-_Frieren_Beyond_Journeys_End_OST_Piano_Solo.mid');">Play hinematov.mid</a> -->
+
+<!-- <script>
+    // Each bundle exports a global object with the name of the bundle.
+    const player = new core.Player();
+    //...
+    const mvae = new music_vae.MusicVAE('https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/mel_2bar_small');
+    mvae.initialize().then(() => {
+      mvae.sample(1).then((samples) => player.start(samples[0]));
+    });
+</script> -->
+
+<!-- <full-screen-span>
     <span class="full-screen-span">
         <piano-roll-container></piano-roll-container>
     </span>
-</full-screen-span>
+</full-screen-span> -->
 
 <!-- Templates -->
 

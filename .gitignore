@@ -11,5 +11,8 @@ dist/
 .cache/
 .parcel-cache
 
+# Sample midi
+static/midi/
+
 # Built website
 public/

@@ -9,22 +9,22 @@ import { Ball } from "./ball.js";
 /* CUSTOM COMPONENT */
 
 /**
- * A web component to display an environment item.
+ * A web component to display the piano roll.
  *
- * @class PianoRollContainer
- * @typedef {PianoRollContainer}
+ * @class PianoRollCanvas
+ * @typedef {PianoRollCanvas}
  * @extends {HTMLElement}
  */
-export class PianoRollContainer extends HTMLElement {
+export class PianoRollCanvas extends HTMLElement {
     static template;
 
     /**
-     * PianoRollContainer initializer: Must be called before the component is defined but after the DOM has been loaded.
+     * PianoRollCanvas initializer: Must be called before the component is defined but after the DOM has been loaded.
      *
-     * @param {PianoRollContainer} template
+     * @param {PianoRollCanvas} template
      */
     static initialize(template) {
-        PianoRollContainer.template = template;
+        PianoRollCanvas.template = template;
     }
 
     // Web component boilerplate
@@ -33,20 +33,22 @@ export class PianoRollContainer extends HTMLElement {
 
     // Private references to subcomponents that will NOT be added/removed from the DOM after initilization
     balls = []
+    canvasWidth = 0;
+    canvasHeight = 0;
 
     /**
-     * Creates an instance of PianoRollContainer.
+     * Creates an instance of PianoRollCanvas.
      */
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: "open" });
 
         // Append the template content to the shadow root
-        this.shadow.append(PianoRollContainer.template.content.cloneNode(true));
+        this.shadow.append(PianoRollCanvas.template.content.cloneNode(true));
 
         // Ensure all elements are present and of the correct types
         // Verify innerContainer
-        const innerContainer = this.shadow.querySelector(".piano-roll-container");
+        const innerContainer = this.shadow.querySelector(".piano-roll-canvas");
         if (!(innerContainer instanceof HTMLElement)) {
             throw new Error("innerContainer not found");
         }
@@ -71,20 +73,14 @@ export class PianoRollContainer extends HTMLElement {
         this.canvas.id = "ScoreCanvas";
         this.innerContainer.appendChild(this.canvas);
 
-        /**
-         * The canvas measurements
-         */
-        this.canvasWidth = 0;
-        this.canvasHeight = 0;
-
         this.context = this.canvas.getContext("2d");
 
         for (var i = 0; i < 500; i++) {
             this.balls.push(new Ball(this.canvas, this.context));
         }
 
-        // Initial resize
-        this.resize();
+        // Inital Resize
+        this.resize(this.canvasWidth, this.canvasHeight);
 
         this.animate();
     }

@@ -10,6 +10,8 @@ import { Midi } from '@tonejs/midi';
  */
 async function main() {
     console.log("In Main");
+    const controller = new Controller();
+    controller.initialize();
 }
 
 /* Register event handler to run after the page is fully loaded. */
@@ -49,23 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 synth = new Tone.PolySynth(Tone.Synth).toDestination(); // Use a PolySynth
             }
 
-            Tone.Transport.cancel();
-            Tone.Transport.stop();
+            Tone.getTransport().cancel();
+            Tone.getTransport().stop();
 
             console.log(midi);
 
             try {
-                Tone.Transport.bpm.value = midi.header.tempos[0].bpm;
+                Tone.getTransport().bpm.value = midi.header.tempos[0].bpm;
                 midi.tracks.forEach(track => {
                     track.notes.forEach(note => {
                         console.log("midi note fields", [note.name, note.duration, note.time, note.velocity]);
-                        Tone.Transport.schedule(time => {
+                        Tone.getTransport().schedule(time => {
                             synth.triggerAttackRelease(note.name, note.duration, time, note.velocity);
                         }, note.time);
                     });
                 });
 
-                Tone.Transport.start();
+                Tone.getTransport().start();
 
             } catch (error) {
                 console.error("Error playing MIDI:", error);

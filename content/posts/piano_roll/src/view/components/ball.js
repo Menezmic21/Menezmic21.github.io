@@ -5,8 +5,8 @@ export class Ball {
     x = Math.floor(Math.random() * 500);
     y = Math.floor(Math.random() * 200);
     radius = 20;
-    dx = 5; // Horizontal velocity
-    dy = 3; // Vertical velocity
+    dx = Math.floor(Math.random() * 10); // Horizontal velocity
+    dy = Math.floor(Math.random() * 10); // Vertical velocity
 
     constructor(canvas, context) {
         this.canvas = canvas;

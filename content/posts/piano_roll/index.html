@@ -15,39 +15,32 @@ featured: true
 
 <!-- Pseudo Body -->
 
-<input type="file" id="midi-file-input" accept=".mid,.midi">
-<!-- <button id="convert-button">Convert</button> -->
-<!-- <div id="error-message"></div> -->
-<button id="play-button">Play</button>
-<!-- <input type="range" id="scrub-slider" min="0" value="0" step="0.01"> -->
-
-<!-- <button id="playButton">Play Sound</button> -->
-<!-- <a href="#" onClick="MIDIjsjs.play('/midi/Frieren_the_Slayer_-_Frieren_Beyond_Journeys_End_OST_Piano_Solo.mid');">Play hinematov.mid</a> -->
-
-<!-- <script>
-    // Each bundle exports a global object with the name of the bundle.
-    const player = new core.Player();
-    //...
-    const mvae = new music_vae.MusicVAE('https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/mel_2bar_small');
-    mvae.initialize().then(() => {
-      mvae.sample(1).then((samples) => player.start(samples[0]));
-    });
-</script> -->
-
-<!-- <full-screen-span>
+<full-screen-span>
     <span class="full-screen-span">
-        <piano-roll-container></piano-roll-container>
+        <ui-bar></ui-bar>
+        <piano-roll-canvas></piano-roll-canvas>
     </span>
-</full-screen-span> -->
+</full-screen-span>
+
+<input type="file" id="midi-file-input" accept=".mid,.midi">
+<button id="play-button">Play</button>
 
 <!-- Templates -->
 
-<template id="piano-roll-container-template">
+<template id="piano-roll-canvas-template">
     <link
         rel="stylesheet"
-        href="./styles/piano_roll_container/piano_roll_container.css"
+        href="./styles/piano_roll_canvas/piano_roll_canvas.css"
     />
-    <section class="piano-roll-container">
-        PianoRollContainer
+    <section class="piano-roll-canvas"></section>
+</template>
+
+<template id="ui-bar-template">
+    <link
+        rel="stylesheet"
+        href="./styles/ui_bar/ui_bar.css"
+    />
+    <section class="ui-bar">
+        UIBar
     </section>
 </template>

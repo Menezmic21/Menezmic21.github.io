@@ -1,6 +1,9 @@
-.piano-roll-container {
+.note-canvas {
     width: 100%;
     display: block;
-    color: white;
-    text-align: center;
+}
+
+.key-canvas {
+    width: 100%;
+    display: block;
 }

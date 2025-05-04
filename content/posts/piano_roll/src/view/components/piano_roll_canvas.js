@@ -1,4 +1,6 @@
 import { Ball } from "./ball.js";
+import { Note } from "./note.js";
+import * as Tone from "tone";
 
 /* CUSTOM EVENTS */
 // NA
@@ -33,12 +35,15 @@ export class PianoRollCanvas extends HTMLElement {
 
     // Private references to subcomponents that will NOT be added/removed from the DOM after initilization
     balls = []
+    notes = []
     canvasWidth = 0;
     canvasHeight = 0;
     noteCanvasWidth = 0;
     noteCanvasHeight = 0;
     keysCanvasWidth = 0;
     keysCanvasHeight = 0;
+    lowestNote = 0; // 21;
+    highestNote = 108;
 
     /**
      * Creates an instance of PianoRollCanvas.
@@ -109,7 +114,7 @@ export class PianoRollCanvas extends HTMLElement {
         this.keysContext.canvas.width = this.keysCanvasWidth;
         this.keysContext.canvas.height = this.keysCanvasHeight;
         
-        this.drawPianoKeyboard(this.keysCanvas, this.keysContext, 21, 108); // Draw keyboard from C3 to C5
+        this.drawPianoKeyboard(this.keysCanvas, this.keysContext, this.lowestNote, this.highestNote); // Draw keyboard from C3 to C5
     };
 
     // Animation loop function
@@ -118,63 +123,203 @@ export class PianoRollCanvas extends HTMLElement {
         this.noteContext.clearRect(0, 0, this.noteCanvas.width, this.noteCanvas.height);
 
         // Draw balls
-        for (var i = 0; i < 500; i++) {
-            this.balls[i].draw();
-        }
+        // for (var i = 0; i < 500; i++) {
+        //     this.balls[i].draw();
+        // }
+
+        // Draw notes
+        this.notes.forEach((currentValue) => {
+            currentValue.draw(Tone.now());
+        });
 
         // Request the next animation frame
         requestAnimationFrame(this.animate.bind(this));
     }
 
+    /**
+     * Calculates the number of white keys between two MIDI notes (inclusive), optimized.
+     *
+     * @param {number} startNote - The MIDI note number of the starting note.
+     * @param {number} endNote - The MIDI note number of the ending note.
+     * @returns {number} The number of white keys between the two notes (inclusive).
+     *
+     * @example
+     * // Returns 4
+     * countWhiteKeysOptimized(60, 64);
+     *
+     * @example
+     * // Returns 0
+     * countWhiteKeysOptimized(61, 63);
+     */
+    countWhiteKeys(startNote, endNote) {
+        // Ensure startNote is less than or equal to endNote
+        if (startNote > endNote) {
+            [startNote, endNote] = [endNote, startNote]; // Swap the values
+        }
+
+        const notes = endNote - startNote + 1;
+        const octaves = Math.floor(notes / 12);
+        const remainingNotes = notes % 12;
+
+        let whiteKeys = octaves * 7; // 7 white keys per octave
+
+        // Calculate white keys in the remaining notes
+        const startOffset = startNote % 12;
+        const endOffset = endNote % 12;
+
+        // Handle the edge case where startNote and endNote are in the same octave
+        if (octaves === 0) {
+            for (let i = startNote; i <= endNote; i++) {
+                if (this.isWhiteKey(i)) {
+                    whiteKeys++;
+                }
+            }
+            return whiteKeys;
+        }
+        
+        const whiteKeyPositions = [0, 2, 4, 5, 7, 9, 11]; // Positions of white keys in an octave (C=0, D=2, etc.)
+        
+        let startWhiteKeyIndex = -1;
+        let endWhiteKeyIndex = -1;
+        
+        for(let i = 0; i < whiteKeyPositions.length; i++){
+            if(whiteKeyPositions[i] >= startOffset){
+                startWhiteKeyIndex = i;
+                break;
+            }
+        }
+        for(let i = 0; i < whiteKeyPositions.length; i++){
+            if(whiteKeyPositions[i] >= endOffset){
+                endWhiteKeyIndex = i;
+                break;
+            }
+        }
+
+        if(startWhiteKeyIndex !== -1){
+            whiteKeys += whiteKeyPositions.length - startWhiteKeyIndex;
+        }
+        if(endWhiteKeyIndex !== -1){
+            whiteKeys += endWhiteKeyIndex;
+        }
+        
+        //Need to subtract the white keys of the first and last octave to avoid double counting
+        if(startWhiteKeyIndex !== -1){
+            whiteKeys -= 7;
+        }
+        if(endWhiteKeyIndex !== -1){
+            whiteKeys -= (endWhiteKeyIndex === 0) ? 0 : 7;
+        }
+        
+
+        return whiteKeys;
+    }
+
+    /**
+     * Helper function to determine if a given MIDI note is a white key.  (Unchanged)
+     *
+     * @param {number} note - The MIDI note number.
+     * @returns {boolean} True if the note is a white key, false otherwise.
+     */
+    isWhiteKey(note) {
+        const noteNumber = note % 12;
+        // White keys are C, D, E, F, G, A, B
+        return noteNumber === 0 || noteNumber === 2 || noteNumber === 4 || noteNumber === 5 || noteNumber === 7 || noteNumber === 9 || noteNumber === 11;
+    }
+
+    // TODO: Make this global or singleton between here and controller
+    secondsToTraverse = 5;
+
+    createNote(time, note) {
+        const width = this.noteCanvasWidth;
+        const height = this.noteCanvasHeight;
+        let new_note;
+
+        const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
+
+        // Compute key dimensions
+        const whiteKeyWidth = Math.floor(width / totalWhiteKeys);
+        const blackKeyWidth = Math.floor(whiteKeyWidth * 0.6);
+        const white_index = this.countWhiteKeys(this.lowestNote, note.midi);
+        const key_height = Math.floor(height * note.duration / this.secondsToTraverse);
+
+        console.log("height", [height]);
+
+        // If the note is white
+        if (this.isWhiteKey(note.midi)) {
+            // Compute the location
+            const key_x = white_index * whiteKeyWidth;
+
+            console.log("create note time", [Tone.now(), time]);
+
+            new_note = new Note(this.noteCanvas, this.noteContext, key_x, height, whiteKeyWidth, -key_height, "rgb(230, 224, 136)", time);
+            
+        // If the note is black
+        } else {
+            // Compute the location
+            const key_x = white_index * whiteKeyWidth - Math.floor(blackKeyWidth / 2);
+
+            new_note = new Note(this.noteCanvas, this.noteContext, key_x, height, blackKeyWidth, -key_height, "rgb(185, 127, 231)", time);
+        }
+
+        // Add the new note to the notes array
+        this.notes.push(new_note);
+    }
+
     drawPianoKeyboard(canvas, ctx, lowestNote = 35, highestNote = 81) { // MIDI note numbers,  A2 = 45, C4 = 60
         const width = canvas.width;
         const height = canvas.height;
-        const totalKeys = highestNote - lowestNote + 1;
-        const whiteKeys = [];
-        const blackKeys = [];
 
-        // 1. Calculate key positions and sizes
-        let currentX = 0;
+        const totalWhiteKeys = this.countWhiteKeys(lowestNote, highestNote);
+
+        // Compute key dimensions
+        const whiteKeyWidth = Math.floor(width / totalWhiteKeys);
+        const blackKeyWidth = Math.floor(whiteKeyWidth * 0.6);
+        const whiteKeyHeight = Math.floor(height);
+        const blackKeyHeight = Math.floor(whiteKeyHeight * 0.6);
+
+        // Draw the white keys
+        // For each note
+        for (let white_index = 0; white_index <= totalWhiteKeys; white_index++) {
+            // Compute the location
+            const key_x = white_index * whiteKeyWidth;
+
+            // Draw the key
+            ctx.fillStyle = "rgb(255, 255, 255)";
+            ctx.fillRect(key_x, 0, whiteKeyWidth, whiteKeyHeight);
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(key_x, 0, whiteKeyWidth, whiteKeyHeight);
+        }
+
+        let white_index = 0;
+
+        // Draw the black keys
+        // For each note
         for (let note = lowestNote; note <= highestNote; note++) {
-            const isWhiteKey = [0, 2, 4, 5, 7, 9, 11].includes(note % 12);
-            const whiteKeyHeight = height;
-            const blackKeyHeight = height * 0.6;
-            const noteInfo = {
-                note: note,
-                x: currentX,
-                height: isWhiteKey? whiteKeyHeight: blackKeyHeight,
-                isWhite: isWhiteKey,
-            };
+            // If the key is white
+            if (this.isWhiteKey(note)) {
+                // If middle C
+                if (note == 60) {
+                    // Compute the location
+                    const key_x = white_index * whiteKeyWidth + Math.floor(whiteKeyWidth / 2);
 
-            if (isWhiteKey) {
-                whiteKeys.push(noteInfo);
+                    ctx.beginPath();
+                    ctx.arc(key_x, blackKeyHeight, 5, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgb(181, 60, 0)";
+                    ctx.fill();
+                }
+
+                // Increment the number of white keys drawn
+                white_index++
+
+            // If the key is black
             } else {
-                blackKeys.push(noteInfo);
+                // Compute the location
+                const key_x = white_index * whiteKeyWidth - Math.floor(blackKeyWidth / 2);
+
+                // Draw the key
+                ctx.fillStyle = "rgb(0, 0, 0)";
+                ctx.fillRect(key_x, 0, blackKeyWidth, blackKeyHeight);
             }
         }
-        const totalWhiteKeys = whiteKeys.length;
-        const whiteKeyWidth = width/totalWhiteKeys;
-
-        //correct the x values for the white keys.
-        let whiteKeyIndex = 0;
-        for(let i = 0; i < whiteKeys.length; i++){
-            whiteKeys[i].x = whiteKeyIndex * whiteKeyWidth;
-            whiteKeyIndex++;
-        }
-
-        // 2. Draw white keys
-        whiteKeys.forEach(key => {
-            ctx.fillStyle = '#fff';
-            ctx.fillRect(Math.floor(key.x), 0, Math.floor(whiteKeyWidth), Math.floor(key.height));
-            ctx.strokeStyle = '#000';
-            ctx.strokeRect(Math.floor(key.x), 0, Math.floor(whiteKeyWidth), Math.floor(key.height));
-        });
-
-        // 3. Draw black keys
-        blackKeys.forEach(key => {
-            ctx.fillStyle = '#000';
-            let xPos = whiteKeys.find(wk => wk.note > key.note -1).x - (whiteKeyWidth * 0.7 * 0.5);
-            ctx.fillRect(Math.floor(xPos), 0, Math.floor(whiteKeyWidth * 0.7), Math.floor(key.height));
-        });
     }
 }

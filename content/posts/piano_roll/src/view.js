@@ -11,14 +11,18 @@
  * @typedef {View}
  */
 export class View {
-    fullScreenSpan;
-    pianoRollContainer;
+    uiBar;
+    pianoRollCanvas;
 
     /**
      * Creates an instance of View.
      */
     constructor() {
-        this.fullScreenSpan = document.querySelector('full-screen-span');
-        this.pianoRollContainer = document.querySelector('piano-roll-container');
+        this.uiBar = document.querySelector('ui-bar');
+        this.pianoRollCanvas = document.querySelector('piano-roll-canvas');
+    }
+
+    createNote(time, note) {
+        this.pianoRollCanvas.createNote(time, note);
     }
 }

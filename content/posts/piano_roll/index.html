@@ -12,6 +12,7 @@ featured: true
 
 <link rel="stylesheet" href="./styles/styles.css">
 <script defer type="module" src="/dist/piano_roll/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 
 <!-- Pseudo Body -->
 
@@ -37,11 +38,23 @@ featured: true
 </template>
 
 <template id="ui-bar-template">
+    <link rel="stylesheet" href="./styles/nouislider_copy.css">
     <link
         rel="stylesheet"
         href="./styles/ui_bar/ui_bar.css"
     />
     <section class="ui-bar">
-        UIBar
+        <article class="vertical-alignment">
+            <article class="left-widget">
+                <iconify-icon class="play" icon="mdi:pause"></iconify-icon>
+                <iconify-icon class="volume" icon="mdi:volume"></iconify-icon>
+                <iconify-icon class="metronome" icon="mdi:metronome"></iconify-icon>
+            </article>
+            <article class="right-widget">
+                <iconify-icon class="gear" icon="mdi:gear"></iconify-icon>
+                <iconify-icon class="fullscreen" icon="mdi:fullscreen"></iconify-icon>
+            </article>
+        </article>
+        <div class="timeline-slider"></div>
     </section>
 </template>

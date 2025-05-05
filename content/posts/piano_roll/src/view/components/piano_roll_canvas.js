@@ -78,10 +78,6 @@ export class PianoRollCanvas extends HTMLElement {
         this.noteContext = this.noteCanvas.getContext("2d");
         this.keysContext = this.keysCanvas.getContext("2d");
 
-        for (var i = 0; i < 500; i++) {
-            this.balls.push(new Ball(this.noteCanvas, this.noteContext));
-        }
-
         // Inital Resize
         this.resize(this.canvasWidth, this.canvasHeight);
 
@@ -114,18 +110,13 @@ export class PianoRollCanvas extends HTMLElement {
         this.keysContext.canvas.width = this.keysCanvasWidth;
         this.keysContext.canvas.height = this.keysCanvasHeight;
         
-        this.drawPianoKeyboard(this.keysCanvas, this.keysContext, this.lowestNote, this.highestNote); // Draw keyboard from C3 to C5
+        this.drawPianoKeyboard();
     };
 
     // Animation loop function
     animate() {
         // Clear the canvas
         this.noteContext.clearRect(0, 0, this.noteCanvas.width, this.noteCanvas.height);
-
-        // Draw balls
-        // for (var i = 0; i < 500; i++) {
-        //     this.balls[i].draw();
-        // }
 
         // Draw notes
         this.notes.forEach((currentValue) => {
@@ -134,6 +125,18 @@ export class PianoRollCanvas extends HTMLElement {
 
         // Request the next animation frame
         requestAnimationFrame(this.animate.bind(this));
+    }
+
+    /**
+     * Helper function to determine if a given MIDI note is a white key.  (Unchanged)
+     *
+     * @param {number} note - The MIDI note number.
+     * @returns {boolean} True if the note is a white key, false otherwise.
+     */
+    isWhiteKey(note) {
+        const noteNumber = note % 12;
+        // White keys are C, D, E, F, G, A, B
+        return noteNumber === 0 || noteNumber === 2 || noteNumber === 4 || noteNumber === 5 || noteNumber === 7 || noteNumber === 9 || noteNumber === 11;
     }
 
     /**
@@ -214,18 +217,6 @@ export class PianoRollCanvas extends HTMLElement {
         return whiteKeys;
     }
 
-    /**
-     * Helper function to determine if a given MIDI note is a white key.  (Unchanged)
-     *
-     * @param {number} note - The MIDI note number.
-     * @returns {boolean} True if the note is a white key, false otherwise.
-     */
-    isWhiteKey(note) {
-        const noteNumber = note % 12;
-        // White keys are C, D, E, F, G, A, B
-        return noteNumber === 0 || noteNumber === 2 || noteNumber === 4 || noteNumber === 5 || noteNumber === 7 || noteNumber === 9 || noteNumber === 11;
-    }
-
     // TODO: Make this global or singleton between here and controller
     secondsToTraverse = 5;
 
@@ -242,14 +233,12 @@ export class PianoRollCanvas extends HTMLElement {
         const white_index = this.countWhiteKeys(this.lowestNote, note.midi);
         const key_height = Math.floor(height * note.duration / this.secondsToTraverse);
 
-        console.log("height", [height]);
-
         // If the note is white
         if (this.isWhiteKey(note.midi)) {
             // Compute the location
             const key_x = white_index * whiteKeyWidth;
 
-            console.log("create note time", [Tone.now(), time]);
+            // console.log("create note time", [Tone.now(), time]);
 
             new_note = new Note(this.noteCanvas, this.noteContext, key_x, height, whiteKeyWidth, -key_height, "rgb(230, 224, 136)", time);
             
@@ -265,47 +254,61 @@ export class PianoRollCanvas extends HTMLElement {
         this.notes.push(new_note);
     }
 
-    drawPianoKeyboard(canvas, ctx, lowestNote = 35, highestNote = 81) { // MIDI note numbers,  A2 = 45, C4 = 60
-        const width = canvas.width;
-        const height = canvas.height;
+    drawWhiteKeys() {
+        const width = this.keysCanvasWidth;
+        const height = this.keysCanvasHeight;
 
-        const totalWhiteKeys = this.countWhiteKeys(lowestNote, highestNote);
-
-        // Compute key dimensions
-        const whiteKeyWidth = Math.floor(width / totalWhiteKeys);
-        const blackKeyWidth = Math.floor(whiteKeyWidth * 0.6);
-        const whiteKeyHeight = Math.floor(height);
-        const blackKeyHeight = Math.floor(whiteKeyHeight * 0.6);
+        const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
+        const whiteKeyWidth = width / totalWhiteKeys;
 
         // Draw the white keys
         // For each note
         for (let white_index = 0; white_index <= totalWhiteKeys; white_index++) {
             // Compute the location
-            const key_x = white_index * whiteKeyWidth;
+            const key_x = Math.round(white_index * whiteKeyWidth);
+            const next_key_x = Math.round((white_index+1) * whiteKeyWidth);
+            const roundedWhiteKeyWidth = next_key_x - key_x;
 
             // Draw the key
-            ctx.fillStyle = "rgb(255, 255, 255)";
-            ctx.fillRect(key_x, 0, whiteKeyWidth, whiteKeyHeight);
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(key_x, 0, whiteKeyWidth, whiteKeyHeight);
+            this.keysContext.fillStyle = "rgb(255, 255, 255)";
+            this.keysContext.fillRect(key_x, 0, roundedWhiteKeyWidth, height);
+
+            // Draw the key outline
+            this.keysContext.strokeStyle = "rgb(0, 0, 0)";
+            this.keysContext.strokeRect(key_x, 0, roundedWhiteKeyWidth, height);
         }
+    }
+
+    drawBlackKeys() {
+        const width = this.keysCanvasWidth;
+        const height = this.keysCanvasHeight;
+
+        const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
+        const whiteKeyWidth = width / totalWhiteKeys;
+
+        const blackKeyWidth = whiteKeyWidth * 0.6;
+        const blackKeyHeight = Math.floor(height * 0.6);
 
         let white_index = 0;
 
         // Draw the black keys
         // For each note
-        for (let note = lowestNote; note <= highestNote; note++) {
+        for (let note = this.lowestNote; note <= this.highestNote; note++) {
+            // Compute the location
+            const white_key_x = Math.round(white_index * whiteKeyWidth);
+
             // If the key is white
             if (this.isWhiteKey(note)) {
                 // If middle C
                 if (note == 60) {
                     // Compute the location
-                    const key_x = white_index * whiteKeyWidth + Math.floor(whiteKeyWidth / 2);
+                    const key_x = Math.floor(white_key_x + whiteKeyWidth / 2);
 
-                    ctx.beginPath();
-                    ctx.arc(key_x, blackKeyHeight, 5, 0, Math.PI * 2);
-                    ctx.fillStyle = "rgb(181, 60, 0)";
-                    ctx.fill();
+                    // Draw the middle C marker
+                    this.keysContext.beginPath();
+                    this.keysContext.arc(key_x, Math.floor((blackKeyHeight + height) / 2), 5, 0, Math.PI * 2);
+                    this.keysContext.fillStyle = "rgb(0, 113, 227)";
+                    this.keysContext.fill();
                 }
 
                 // Increment the number of white keys drawn
@@ -314,12 +317,17 @@ export class PianoRollCanvas extends HTMLElement {
             // If the key is black
             } else {
                 // Compute the location
-                const key_x = white_index * whiteKeyWidth - Math.floor(blackKeyWidth / 2);
+                const key_x = Math.floor(white_key_x - blackKeyWidth / 2);
 
                 // Draw the key
-                ctx.fillStyle = "rgb(0, 0, 0)";
-                ctx.fillRect(key_x, 0, blackKeyWidth, blackKeyHeight);
+                this.keysContext.fillStyle = "rgb(0, 0, 0)";
+                this.keysContext.fillRect(key_x, 0, Math.floor(blackKeyWidth), blackKeyHeight);
             }
         }
+    }
+
+    drawPianoKeyboard() { // MIDI note numbers,  A2 = 45, C4 = 60
+        this.drawWhiteKeys();
+        this.drawBlackKeys();
     }
 }

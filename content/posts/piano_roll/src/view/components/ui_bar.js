@@ -1,3 +1,6 @@
+import * as noUiSlider from 'nouislider';
+import * as Tone from "tone";
+
 /* CUSTOM CLASS */
 
 /**
@@ -23,7 +26,12 @@ export class UIBar extends HTMLElement {
     controller = null;
 
     // Private references to subcomponents that will NOT be added/removed from the DOM after initilization
-    // NA
+    innerContainer;
+    slider;
+    fullscreenButton;
+
+    // class vars
+    isPlaying = false;
 
     /**
      * Creates an instance of UIBar.
@@ -42,6 +50,20 @@ export class UIBar extends HTMLElement {
             throw new Error("innerContainer not found");
         }
         this.innerContainer = innerContainer;
+
+        // Verify fullscreenButton
+        const fullscreenButton = this.shadow.querySelector(".fullscreen");
+        if (!(fullscreenButton instanceof HTMLElement)) {
+            throw new Error("fullscreenButton not found");
+        }
+        this.fullscreenButton = fullscreenButton;
+
+        // Verify playButton
+        const playButton = this.shadow.querySelector(".play");
+        if (!(playButton instanceof HTMLElement)) {
+            throw new Error("playButton not found");
+        }
+        this.playButton = playButton;
     }
 
     /**
@@ -53,6 +75,38 @@ export class UIBar extends HTMLElement {
     connectedCallback() {
         this.controller = new AbortController();
         const options = { signal: this.controller.signal };
+
+        var range = this.shadow.querySelector('.timeline-slider');
+
+        console.log("range", [range]);
+            
+        noUiSlider.create(range, {
+            start: [ 0, 10 ], // Handle start position
+            margin: 1, // Handles must be more than '1' apart
+            connect: true, // Display a colored bar between the handles
+            // direction: 'rtl', // Put '0' at the bottom of the slider
+            orientation: 'horizontal', // Orient the slider vertically
+            behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+            range: { // Slider can select '0' to '100'
+                'min': 0,
+                'max': 100
+            },
+        });
+
+        this.playButton.addEventListener('click', () => {
+            // If playing
+            if (this.isPlaying) {
+                Tone.Transport.stop();
+                this.playButton.setAttribute('icon', 'mdi:play');
+                this.isPlaying = false;
+
+            // If paused
+            } else {
+                Tone.Transport.start();
+                this.playButton.setAttribute('icon', 'mdi:pause');
+                this.isPlaying = true;
+            }
+        });
     }
 
     /**

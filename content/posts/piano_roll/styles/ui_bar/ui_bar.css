@@ -1,3 +1,64 @@
-.ui-bar {
-    background-color: plum;
+.vertical-alignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5vh;
+}
+
+.left-widget {
+  display: flex;
+  flex-direction: row;
+  /* background-color: rgb(165, 160, 221); */
+}
+
+.right-widget {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* background-color: rgb(160, 205, 221); */
+}
+
+.timeline-slider {
+  position: relative;
+  height: 2vh;
+  /* border-radius: 0.5vh; Consistent radius with height */
+  margin: 1.5vh;
+  border-color: transparent;
+}
+
+.noUi-origin {
+  height: 100% !important;
+}
+
+.noUi-connect {
+  background: #a1a1a1;
+}
+
+/* Style for the slider handles */
+.noUi-handle {
+  aspect-ratio: 1 / 1 !important;
+  width: unset !important;
+  height: 100% !important;
+  right: -1vh !important; /*  must be (width / 2) * -1 */
+  top: 0 !important;
+  border-radius: 50%;
+  background: rgb(0, 113, 227);
+  box-shadow: unset;
+  border-color: transparent;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+  display: none;
+}
+
+iconify-icon {
+  display: inline-block; /* Ensure the style applies */
+  width: 3vh;
+  height: 3vh;
+  font-size: 3vh; /* Make the icon itself scale with the container */
+  line-height: 3vh;  /* Important for vertical centering */
+  color: white;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  cursor: pointer; /* Indicate it's clickable */
 }

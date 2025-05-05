@@ -45,7 +45,7 @@ export class FullScreenSpan extends HTMLElement {
 
                 this.PianoRollCanvas.resize(this.PianoRollCanvas.canvasWidth, this.PianoRollCanvas.canvasHeight);
 
-                this.addEventListener('click', () => { // Arrow function here
+                this.uiBar.fullscreenButton.addEventListener('click', () => { // Arrow function here
                     if (!document.fullscreenElement) {
                         if (this.requestFullscreen) {
                             this.requestFullscreen();

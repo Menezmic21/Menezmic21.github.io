@@ -1,3 +1,5 @@
+import { FULLSCREEN } from "./full_screen_span/ui_bar";
+
 /* CUSTOM CLASS */
 
 /**
@@ -45,40 +47,45 @@ export class FullScreenSpan extends HTMLElement {
 
                 this.PianoRollCanvas.resize(this.PianoRollCanvas.canvasWidth, this.PianoRollCanvas.canvasHeight);
 
-                this.uiBar.fullscreenButton.addEventListener('click', () => { // Arrow function here
-                    if (!document.fullscreenElement) {
-                        if (this.requestFullscreen) {
-                            this.requestFullscreen();
-                        } else if (this.webkitRequestFullscreen) { /* Safari */
-                            this.webkitRequestFullscreen();
-                        } else if (this.msRequestFullscreen) { /* IE11 */
-                            this.msRequestFullscreen();
+
+                this.addEventListener(
+                    FULLSCREEN,
+                    () => {
+                        if (!document.fullscreenElement) {
+                            if (this.requestFullscreen) {
+                                this.requestFullscreen();
+                            } else if (this.webkitRequestFullscreen) { /* Safari */
+                                this.webkitRequestFullscreen();
+                            } else if (this.msRequestFullscreen) { /* IE11 */
+                                this.msRequestFullscreen();
+                            }
+                        } else {
+                            if (document.exitFullscreen) {
+                                document.exitFullscreen();
+                            } else if (document.webkitExitFullscreen) { /* Safari */
+                                document.webkitExitFullscreen();
+                            } else if (document.msExitFullscreen) { /* IE11 */
+                                document.msExitFullscreen();
+                            }
                         }
-                    } else {
-                        if (document.exitFullscreen) {
-                            document.exitFullscreen();
-                        } else if (document.webkitExitFullscreen) { /* Safari */
-                            document.webkitExitFullscreen();
-                        } else if (document.msExitFullscreen) { /* IE11 */
-                            document.msExitFullscreen();
-                        }
-                    }
-        
-                    const resizeObserver = new ResizeObserver(entries => {
-                        // Loop through the observed entries (in case multiple elements are observed)
-                        for (let entry of entries) {
-                          // Access the new dimensions
-                          const width = entry.contentRect.width;
-                          const height = entry.contentRect.height - this.uiBar.offsetHeight; // TODO: Change this to vary with flex direction
-                      
-                          // Your event handling logic here
-                        //   console.log(`Span size changed: width=${width}, height=${height}`);
-                          this.PianoRollCanvas.resize(width, height);
-                        }
-                    });
             
-                    resizeObserver.observe(this.innerContainer);
-                });
+                        const resizeObserver = new ResizeObserver(entries => {
+                            // Loop through the observed entries (in case multiple elements are observed)
+                            for (let entry of entries) {
+                              // Access the new dimensions
+                              const width = entry.contentRect.width;
+                              const height = entry.contentRect.height - this.uiBar.offsetHeight; // TODO: Change this to vary with flex direction
+                          
+                              // Your event handling logic here
+                            //   console.log(`Span size changed: width=${width}, height=${height}`);
+                              this.PianoRollCanvas.resize(width, height);
+                            }
+                        });
+                
+                        resizeObserver.observe(this.innerContainer);
+                    },
+                    options,
+                  );
             });
         });
     

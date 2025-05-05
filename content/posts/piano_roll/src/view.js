@@ -22,7 +22,15 @@ export class View {
         this.pianoRollCanvas = document.querySelector('piano-roll-canvas');
     }
 
-    createNote(time, note) {
-        this.pianoRollCanvas.createNote(time, note);
+    drawNote(startWindowTime, endWindowTime, time, note) {
+        this.pianoRollCanvas.drawNote(startWindowTime, endWindowTime, time, note);
+    }
+
+    clearNoteCanvas() {
+        this.pianoRollCanvas.clearNoteCanvas();
+    }
+
+    drawPianoKeyboard() {
+        this.pianoRollCanvas.drawPianoKeyboard();
     }
 }

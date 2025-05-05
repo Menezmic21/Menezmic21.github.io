@@ -2,82 +2,111 @@ import { View } from "./view.js"
 import { initComponents } from "./view/components.js";
 import * as Tone from "tone";
 import { Midi } from '@tonejs/midi';
+import { PLAY, PAUSE, FILE_SELECT } from "./view/components/full_screen_span/ui_bar.js";
 
-/* CUSTOM TYPES */
-
-/* CUSTOM CLASS */
-
-/**
- * A class for managing the connection between model and view. This class serves as the adapter in MVA.
- *
- * @class Controller
- * @typedef {Controller}
- */
 export class Controller {
-  view;
+    view;
+    midi = null;
+    synth = null;
+    noteEvents = [];
+    startWindowTime = 0;
+    endWindowTime = 5;
+    startWindowIndex = 0;
+    animationFrameId = null;
 
     constructor() {
         this.view = new View();
     }
 
-    /**
-     * Initializes the Controller - sets up components, error displays, and event listeners.
-     *
-     * @public
-     */
     initialize() {
         initComponents();
 
-        const playButton = document.getElementById('play-button');
-        const midiFileInput = document.getElementById('midi-file-input');
-        let midi = null;
-        let synth = null;
-
-        midiFileInput.addEventListener('change', async (event) => {
-            const file = event.target.files[0];
+        document.addEventListener(FILE_SELECT, async (event) => {
+            const file = event.detail.midiFile;
             if (file) {
                 const reader = new FileReader();
                 reader.onload = async (e) => {
                     try {
-                        midi = new Midi(e.target.result); // Use Tone.Midi directly
-                        const json = JSON.stringify(midi, null, 2);
-                        console.log("Midi data loaded!", json);
+                        this.midi = new Midi(e.target.result);
+                        console.log("Midi data loaded!", JSON.stringify(this.midi, null, 2));
+
+                        console.log("tracks", [this.midi.tracks]);
+
+                        this.noteEvents = [];
+                        this.midi.tracks.forEach(track => track.notes.forEach(note => this.noteEvents.push(note)));
+                        this.noteEvents.sort((a, b) => a.time - b.time || a.duration - b.duration || a.midi - b.midi);
+                        console.log("noteEvents", [this.noteEvents]);
+                        this.startWindowTime = 0;
+                        this.endWindowTime = 5;
+                        this.startWindowIndex = 0;
                     } catch (error) {
                         console.error("Error parsing MIDI:", error);
                         alert("Error parsing MIDI file. Please ensure it is a valid MIDI file.");
                     }
                 };
-                reader.readAsArrayBuffer(file); // Important: read as ArrayBuffer!
+                reader.readAsArrayBuffer(file);
             }
         });
 
-        const secondsToTraverse = 5;
+        const drawFrame = (view) => {
+            view.clearNoteCanvas();
 
-        playButton.addEventListener('click', async () => {
-            if (midi) {
-                if (!synth) {
-                    synth = new Tone.PolySynth(Tone.Synth).toDestination(); // Use a PolySynth
+            // Find the starting index for notes within the current window
+            while (this.startWindowIndex < this.noteEvents.length && this.noteEvents[this.startWindowIndex].time + this.noteEvents[this.startWindowIndex].duration < this.startWindowTime) {
+                console.log("played", [this.noteEvents[this.startWindowIndex].name, this.noteEvents[this.startWindowIndex].midi, this.view.pianoRollCanvas.countWhiteKeys(0, this.noteEvents[this.startWindowIndex].midi)]);
+                this.startWindowIndex++;
+            }
+
+            for (let i = this.startWindowIndex; i < this.noteEvents.length; i++) {
+                const note = this.noteEvents[i];
+                if (note.time + note.duration >= this.startWindowTime && note.time < this.endWindowTime) {
+                    view.drawNote(this.startWindowTime, this.endWindowTime, Tone.getTransport().seconds, note);
+                }
+                if (note.time >= this.endWindowTime) {
+                    break;
+                }
+            }
+
+            view.drawPianoKeyboard();
+
+            // Reached the end of the midi file
+            if (this.startWindowIndex >= this.noteEvents.length) {
+                Tone.getTransport().cancel();
+                Tone.getTransport().stop();
+            }
+
+            this.startWindowTime = Tone.getTransport().now();
+            this.endWindowTime = this.startWindowTime + 5;
+
+            this.animationFrameId = requestAnimationFrame(() => drawFrame(view));
+        };
+
+        document.addEventListener(PLAY, async () => {
+            if (this.midi) {
+                if (!this.synth) {
+                    this.synth = new Tone.PolySynth(Tone.Synth).toDestination();
                 }
 
                 Tone.getTransport().cancel();
                 Tone.getTransport().stop();
 
-                try {
-                    Tone.getTransport().bpm.value = midi.header.tempos[0].bpm;
-                    midi.tracks.forEach(track => {
-                        track.notes.forEach(note => {
-                            console.log("midi note fields", [note.name, note.duration, note.time, note.velocity]);
-                            Tone.getTransport().schedule((time) => {
-                                synth.triggerAttackRelease(note.name, note.duration, time, note.velocity);
-                            }, note.time + secondsToTraverse-0.3); // TODO: Figure out this 0.3
+                Tone.getTransport().start();
 
-                            Tone.getDraw().schedule(() => {
-                                this.view.createNote(note.time, note);
-                            }, note.time);
-                        });
+                try {
+                    if (this.midi.header.tempos.length > 0) {
+                        Tone.getTransport().bpm.value = this.midi.header.tempos[0].bpm;
+                    }
+
+                    this.noteEvents.forEach((note) => {
+                        Tone.getTransport().schedule((time) => {
+                            this.synth.triggerAttackRelease(note.name, note.duration, time, note.velocity);
+                        }, note.time);
                     });
 
-                    Tone.getTransport().start();
+                    if (this.animationFrameId) {
+                        cancelAnimationFrame(this.animationFrameId);
+                    }
+                    drawFrame(this.view);
 
                 } catch (error) {
                     console.error("Error playing MIDI:", error);
@@ -85,6 +114,14 @@ export class Controller {
                 }
             } else {
                 alert('Please select a MIDI file.');
+            }
+        });
+
+        document.addEventListener(PAUSE, () => {
+            Tone.getTransport().pause();
+            if (this.animationFrameId) {
+                cancelAnimationFrame(this.animationFrameId);
+                this.animationFrameId = null;
             }
         });
     }

@@ -1,6 +1,36 @@
 import * as noUiSlider from 'nouislider';
 import * as Tone from "tone";
 
+/* CUSTOM EVENTS */
+
+/**
+ * Fullscreen Button Clicked.
+ *
+ * @type {"fullscreen"}
+ */
+export const FULLSCREEN = "fullscreen";
+
+/**
+ * Play Button Clicked.
+ *
+ * @type {"play"}
+ */
+export const PLAY = "play";
+
+/**
+ * Pause Button Clicked.
+ *
+ * @type {"pause"}
+ */
+export const PAUSE = "pause";
+
+/**
+ * File Selected.
+ *
+ * @type {"fileSelect"}
+ */
+export const FILE_SELECT = "fileSelect";
+
 /* CUSTOM CLASS */
 
 /**
@@ -64,6 +94,20 @@ export class UIBar extends HTMLElement {
             throw new Error("playButton not found");
         }
         this.playButton = playButton;
+
+        // Verify fileButton
+        const fileButton = this.shadow.querySelector(".filename-display");
+        if (!(fileButton instanceof HTMLElement)) {
+            throw new Error("fileButton not found");
+        }
+        this.fileButton = fileButton;
+
+        // Verify hiddenFileButton
+        const hiddenFileButton = this.shadow.querySelector(".midi-file-input");
+        if (!(hiddenFileButton instanceof HTMLElement)) {
+            throw new Error("hiddenFileButton not found");
+        }
+        this.hiddenFileButton = hiddenFileButton;
     }
 
     /**
@@ -93,19 +137,63 @@ export class UIBar extends HTMLElement {
             },
         });
 
+        this.fullscreenButton.addEventListener('click', () => {
+            const event = new CustomEvent(FULLSCREEN, {
+                detail: {},
+                bubbles: true,
+                composed: true,
+            });
+      
+            this.dispatchEvent(event);
+        });
+
         this.playButton.addEventListener('click', () => {
             // If playing
             if (this.isPlaying) {
-                Tone.Transport.stop();
+                // Tone.Transport.stop();
                 this.playButton.setAttribute('icon', 'mdi:play');
                 this.isPlaying = false;
 
+                const event = new CustomEvent(PAUSE, {
+                    detail: {},
+                    bubbles: true,
+                    composed: true,
+                });
+          
+                this.dispatchEvent(event);
+
             // If paused
             } else {
-                Tone.Transport.start();
+                // Tone.Transport.start();
                 this.playButton.setAttribute('icon', 'mdi:pause');
                 this.isPlaying = true;
+
+                const event = new CustomEvent(PLAY, {
+                    detail: {},
+                    bubbles: true,
+                    composed: true,
+                });
+          
+                this.dispatchEvent(event);
             }
+        });
+
+        this.fileButton.addEventListener('click', () => {
+            this.hiddenFileButton.click(); // Programmatically click the hidden file input
+        });
+
+        this.hiddenFileButton.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            console.log("file select", [file.name]);
+            this.fileButton.innerText = file.name;
+
+            const new_event = new CustomEvent(FILE_SELECT, {
+                detail: {midiFile: file},
+                bubbles: true,
+                composed: true,
+            });
+      
+            this.dispatchEvent(new_event);
         });
     }
 

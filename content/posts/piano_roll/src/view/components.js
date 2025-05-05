@@ -1,6 +1,6 @@
 import { FullScreenSpan } from "./components/full_screen_span.js";
-import { PianoRollCanvas } from "./components/piano_roll_canvas.js";
-import { UIBar } from "./components/ui_bar.js";
+import { PianoRollCanvas } from "./components/full_screen_span/piano_roll_canvas.js";
+import { UIBar } from "./components/full_screen_span/ui_bar.js";
 
 /**
  * Template IDs.

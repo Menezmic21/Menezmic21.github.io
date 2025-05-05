@@ -1,3 +1,7 @@
+/* .ui-bar{
+  display: flex;
+} */
+
 .vertical-alignment {
   display: flex;
   flex-direction: row;
@@ -8,6 +12,7 @@
 .left-widget {
   display: flex;
   flex-direction: row;
+  width: 18vh; /* 3 * (1.5 + 3 + 1.5) */
   /* background-color: rgb(165, 160, 221); */
 }
 
@@ -15,6 +20,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  width: 18vh; /* Must match left-widget: 3 * (1.5 + 3 + 1.5) */
   /* background-color: rgb(160, 205, 221); */
 }
 
@@ -47,6 +53,10 @@
   border-color: transparent;
 }
 
+.noUi-handle:hover {
+  background: rgb(0, 81, 161);
+}
+
 .noUi-handle:before, .noUi-handle:after {
   display: none;
 }
@@ -61,4 +71,24 @@ iconify-icon {
   padding-left: 1.5vh;
   padding-right: 1.5vh;
   cursor: pointer; /* Indicate it's clickable */
+}
+
+iconify-icon:hover {
+  color: rgb(185, 185, 185);
+}
+
+.filename-display {
+  margin: 0;
+  color: white;
+  text-align: center;
+  cursor: pointer; /* Indicate it's clickable */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  bottom: -0.5em;
+  position: relative;
+}
+
+.filename-display:hover {
+  color: rgb(185, 185, 185);
 }

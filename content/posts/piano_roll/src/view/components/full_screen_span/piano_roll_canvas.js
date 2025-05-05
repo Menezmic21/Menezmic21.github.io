@@ -34,8 +34,6 @@ export class PianoRollCanvas extends HTMLElement {
     controller = null;
 
     // Private references to subcomponents that will NOT be added/removed from the DOM after initilization
-    balls = []
-    notes = []
     canvasWidth = 0;
     canvasHeight = 0;
     noteCanvasWidth = 0;
@@ -44,6 +42,7 @@ export class PianoRollCanvas extends HTMLElement {
     keysCanvasHeight = 0;
     lowestNote = 0; // 21;
     highestNote = 108;
+    playingNotes = new Array(this.highestNote - this.lowestNote).fill(false);
 
     /**
      * Creates an instance of PianoRollCanvas.
@@ -80,8 +79,6 @@ export class PianoRollCanvas extends HTMLElement {
 
         // Inital Resize
         this.resize(this.canvasWidth, this.canvasHeight);
-
-        this.animate();
     }
 
     /**
@@ -113,18 +110,9 @@ export class PianoRollCanvas extends HTMLElement {
         this.drawPianoKeyboard();
     };
 
-    // Animation loop function
-    animate() {
-        // Clear the canvas
+    clearNoteCanvas() {
         this.noteContext.clearRect(0, 0, this.noteCanvas.width, this.noteCanvas.height);
-
-        // Draw notes
-        this.notes.forEach((currentValue) => {
-            currentValue.draw(Tone.now());
-        });
-
-        // Request the next animation frame
-        requestAnimationFrame(this.animate.bind(this));
+        this.playingNotes = new Array(this.highestNote - this.lowestNote).fill(false);
     }
 
     /**
@@ -160,98 +148,66 @@ export class PianoRollCanvas extends HTMLElement {
             [startNote, endNote] = [endNote, startNote]; // Swap the values
         }
 
-        const notes = endNote - startNote + 1;
-        const octaves = Math.floor(notes / 12);
-        const remainingNotes = notes % 12;
+        const startOct = Math.floor(startNote / 12);
+        const endOct = Math.floor(endNote / 12);
+        const octDiff = endOct - startOct;
+        const startInOctId = startNote % 12;
+        const endInOctId = endNote % 12;
 
-        let whiteKeys = octaves * 7; // 7 white keys per octave
+        const numWhiteFromC = [1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 6, 7];
 
-        // Calculate white keys in the remaining notes
-        const startOffset = startNote % 12;
-        const endOffset = endNote % 12;
-
-        // Handle the edge case where startNote and endNote are in the same octave
-        if (octaves === 0) {
-            for (let i = startNote; i <= endNote; i++) {
-                if (this.isWhiteKey(i)) {
-                    whiteKeys++;
-                }
-            }
-            return whiteKeys;
-        }
-        
-        const whiteKeyPositions = [0, 2, 4, 5, 7, 9, 11]; // Positions of white keys in an octave (C=0, D=2, etc.)
-        
-        let startWhiteKeyIndex = -1;
-        let endWhiteKeyIndex = -1;
-        
-        for(let i = 0; i < whiteKeyPositions.length; i++){
-            if(whiteKeyPositions[i] >= startOffset){
-                startWhiteKeyIndex = i;
-                break;
-            }
-        }
-        for(let i = 0; i < whiteKeyPositions.length; i++){
-            if(whiteKeyPositions[i] >= endOffset){
-                endWhiteKeyIndex = i;
-                break;
-            }
-        }
-
-        if(startWhiteKeyIndex !== -1){
-            whiteKeys += whiteKeyPositions.length - startWhiteKeyIndex;
-        }
-        if(endWhiteKeyIndex !== -1){
-            whiteKeys += endWhiteKeyIndex;
-        }
-        
-        //Need to subtract the white keys of the first and last octave to avoid double counting
-        if(startWhiteKeyIndex !== -1){
-            whiteKeys -= 7;
-        }
-        if(endWhiteKeyIndex !== -1){
-            whiteKeys -= (endWhiteKeyIndex === 0) ? 0 : 7;
-        }
-        
-
-        return whiteKeys;
+        return 7 * octDiff + numWhiteFromC[endInOctId] - numWhiteFromC[startInOctId] + 1;
     }
 
-    // TODO: Make this global or singleton between here and controller
-    secondsToTraverse = 5;
-
-    createNote(time, note) {
+    drawNote(startWindowTime, endWindowTime, time, note) {
         const width = this.noteCanvasWidth;
         const height = this.noteCanvasHeight;
-        let new_note;
+
+        // console.log("notesCanvas", [width, height]);
 
         const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
+        const whiteKeyWidth = width / totalWhiteKeys;
+        const blackKeyWidth = whiteKeyWidth * 0.6;
+        const note_length = Math.floor(height * note.duration / (endWindowTime - startWindowTime));
 
-        // Compute key dimensions
-        const whiteKeyWidth = Math.floor(width / totalWhiteKeys);
-        const blackKeyWidth = Math.floor(whiteKeyWidth * 0.6);
+        // console.log("noteConsts", [totalWhiteKeys, whiteKeyWidth, blackKeyWidth, note_length]);
+
         const white_index = this.countWhiteKeys(this.lowestNote, note.midi);
-        const key_height = Math.floor(height * note.duration / this.secondsToTraverse);
+
+        const note_y = height - Math.floor(height * (note.time - startWindowTime) / (endWindowTime - startWindowTime));
+
+        // console.log("drawNote", [startWindowTime, endWindowTime, time, note]);
+
+        // If the note is currently being played
+        if (note.time <= time) {
+            this.playingNotes[note.midi] = true;
+        }
+
+        this.noteContext.beginPath();
 
         // If the note is white
         if (this.isWhiteKey(note.midi)) {
             // Compute the location
-            const key_x = white_index * whiteKeyWidth;
+            const note_x = Math.round((white_index-1) * whiteKeyWidth);
+            const next_note_x = Math.round(white_index * whiteKeyWidth);
+            const roundedWhiteKeyWidth = next_note_x - note_x;
 
-            // console.log("create note time", [Tone.now(), time]);
+            // console.log("drawNoteDims", [note_x, note_y, roundedWhiteKeyWidth, note_length]);
 
-            new_note = new Note(this.noteCanvas, this.noteContext, key_x, height, whiteKeyWidth, -key_height, "rgb(230, 224, 136)", time);
+            this.noteContext.fillStyle = "rgb(230, 224, 136)";
+            this.noteContext.roundRect(note_x,  note_y, roundedWhiteKeyWidth, -note_length, Math.floor(roundedWhiteKeyWidth/4));
             
         // If the note is black
         } else {
             // Compute the location
-            const key_x = white_index * whiteKeyWidth - Math.floor(blackKeyWidth / 2);
+            const white_note_x = Math.round(white_index * whiteKeyWidth);
+            const note_x = Math.floor(white_note_x - blackKeyWidth / 2);
 
-            new_note = new Note(this.noteCanvas, this.noteContext, key_x, height, blackKeyWidth, -key_height, "rgb(185, 127, 231)", time);
+            this.noteContext.fillStyle = "rgb(185, 127, 231)";
+            this.noteContext.roundRect(note_x, note_y, Math.floor(blackKeyWidth), -note_length, Math.floor(blackKeyWidth/4));
         }
 
-        // Add the new note to the notes array
-        this.notes.push(new_note);
+        this.noteContext.fill();
     }
 
     drawWhiteKeys() {
@@ -261,21 +217,32 @@ export class PianoRollCanvas extends HTMLElement {
         const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
         const whiteKeyWidth = width / totalWhiteKeys;
 
+        let white_index = 0;
+
         // Draw the white keys
         // For each note
-        for (let white_index = 0; white_index <= totalWhiteKeys; white_index++) {
-            // Compute the location
-            const key_x = Math.round(white_index * whiteKeyWidth);
-            const next_key_x = Math.round((white_index+1) * whiteKeyWidth);
-            const roundedWhiteKeyWidth = next_key_x - key_x;
+        for (let note = this.lowestNote; note <= this.highestNote; note++) {
+            // If the key is white
+            if (this.isWhiteKey(note)) {
+                // Compute the location
+                const key_x = Math.round(white_index * whiteKeyWidth);
+                const next_key_x = Math.round((white_index+1) * whiteKeyWidth);
+                const roundedWhiteKeyWidth = next_key_x - key_x;
 
-            // Draw the key
-            this.keysContext.fillStyle = "rgb(255, 255, 255)";
-            this.keysContext.fillRect(key_x, 0, roundedWhiteKeyWidth, height);
+                // Draw the key
+                this.keysContext.fillStyle = "rgb(255, 255, 255)";
+                if (this.playingNotes[note]) {
+                    this.keysContext.fillStyle = "rgb(230, 224, 136)";
+                }
+                this.keysContext.fillRect(key_x, 0, roundedWhiteKeyWidth, height);
 
-            // Draw the key outline
-            this.keysContext.strokeStyle = "rgb(0, 0, 0)";
-            this.keysContext.strokeRect(key_x, 0, roundedWhiteKeyWidth, height);
+                // Draw the key outline
+                this.keysContext.strokeStyle = "rgb(0, 0, 0)";
+                this.keysContext.strokeRect(key_x, 0, roundedWhiteKeyWidth, height);
+
+                // Increment the number of white keys drawn
+                white_index++;
+            }
         }
     }
 
@@ -312,7 +279,7 @@ export class PianoRollCanvas extends HTMLElement {
                 }
 
                 // Increment the number of white keys drawn
-                white_index++
+                white_index++;
 
             // If the key is black
             } else {
@@ -321,11 +288,15 @@ export class PianoRollCanvas extends HTMLElement {
 
                 // Draw the key
                 this.keysContext.fillStyle = "rgb(0, 0, 0)";
+                if (this.playingNotes[note]) {
+                    this.keysContext.fillStyle = "rgb(185, 127, 231)";
+                }
                 this.keysContext.fillRect(key_x, 0, Math.floor(blackKeyWidth), blackKeyHeight);
             }
         }
     }
 
+    // TODO: Lazy updates
     drawPianoKeyboard() { // MIDI note numbers,  A2 = 45, C4 = 60
         this.drawWhiteKeys();
         this.drawBlackKeys();

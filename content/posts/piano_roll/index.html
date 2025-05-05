@@ -23,9 +23,6 @@ featured: true
     </span>
 </full-screen-span>
 
-<input type="file" id="midi-file-input" accept=".mid,.midi">
-<button id="play-button">Play</button>
-
 <!-- Templates -->
 
 <template id="piano-roll-canvas-template">
@@ -46,10 +43,14 @@ featured: true
     <section class="ui-bar">
         <article class="vertical-alignment">
             <article class="left-widget">
-                <iconify-icon class="play" icon="mdi:pause"></iconify-icon>
+                <iconify-icon class="play" icon="mdi:play"></iconify-icon>
                 <iconify-icon class="volume" icon="mdi:volume"></iconify-icon>
                 <iconify-icon class="metronome" icon="mdi:metronome"></iconify-icon>
             </article>
+            <p class="filename-display">
+                choose file
+                <input type="file" style="display: none;" class="midi-file-input" accept=".mid,.midi">
+            </p>
             <article class="right-widget">
                 <iconify-icon class="gear" icon="mdi:gear"></iconify-icon>
                 <iconify-icon class="fullscreen" icon="mdi:fullscreen"></iconify-icon>

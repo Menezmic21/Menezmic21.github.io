@@ -184,5 +184,45 @@ export class Controller {
         document.addEventListener(SET_BPM, (event) => {
             this.customBPM = event.detail.bpm;
         });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === ' ' && document.fullscreenElement !== null) {
+                // The spacebar was pressed, and we are in fullscreen mode.
+                if (this.isPlaying) {
+                    const new_event = new CustomEvent(PAUSE, {
+                        detail: {},
+                        bubbles: true,
+                        composed: true,
+                    });
+                    document.dispatchEvent(new_event);
+                } else {
+                    const new_event = new CustomEvent(PLAY, {
+                        detail: {},
+                        bubbles: true,
+                        composed: true,
+                    });
+                    document.dispatchEvent(new_event);
+                }
+                this.view.updatePlayButton(this.isPlaying);
+            }
+        });
+
+        // New Event Listener for Scroll in Fullscreen
+        document.addEventListener('wheel', (event) => {
+            console.log("scrolling");
+            if (document.fullscreenElement) {
+                console.log("scrolling in full");
+                const percentY = -event.deltaY / window.screen.height;
+
+                const ticksDiff = this.endWindowTicks - this.startWindowTicks;
+                const ticksDelta = ticksDiff * percentY;
+                this.startWindowTicks += ticksDelta;
+                Tone.getTransport().seconds = Tone.Time(this.startWindowTicks, 'i').toSeconds();
+                this.endWindowTicks += ticksDelta;
+                this.startWindowIndex = 0; // Reset the index when the window changes
+                this.view.clearNoteCanvas(); // Optionally clear immediately for responsiveness
+                drawFrame(this.view); // Force a redraw of the canvas
+            }
+        }, { capture: true }); // Use capture phase to ensure we get the event first
     }
 }

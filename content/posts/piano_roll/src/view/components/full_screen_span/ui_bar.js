@@ -350,6 +350,16 @@ export class UIBar extends HTMLElement {
         // You might also want to update your view or controller here
     }
 
+    updatePlayButton(isPlaying) {
+        if (isPlaying) {
+            this.playButton.setAttribute('icon', 'mdi:pause');
+            this.isPlaying = true;
+        } else {
+            this.playButton.setAttribute('icon', 'mdi:play');
+            this.isPlaying = false;
+        }
+    }
+
     /**
      * Remove event listeners.
      */

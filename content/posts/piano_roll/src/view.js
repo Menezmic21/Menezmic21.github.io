@@ -41,4 +41,8 @@ export class View {
     setBPM(bpm) {
         this.uiBar.setBPM(bpm);
     }
+
+    updatePlayButton(isPlaying) {
+        this.uiBar.updatePlayButton(isPlaying);
+    }
 }

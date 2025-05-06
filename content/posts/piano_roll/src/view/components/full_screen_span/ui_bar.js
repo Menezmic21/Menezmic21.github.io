@@ -52,6 +52,13 @@ export const START_SLIDER_UPDATE = "startSliderUpdate";
  */
 export const END_SLIDER_UPDATE = "endSliderUpdate";
 
+/**
+ * Set BPM.
+ *
+ * @type {"setBPM"}
+ */
+export const SET_BPM = "setBPM";
+
 /* CUSTOM CLASS */
 
 /**
@@ -314,6 +321,13 @@ export class UIBar extends HTMLElement {
 
     setBPM(bpm) {
         this.tempoDisplay.innerText = Math.round(bpm);
+
+        const new_event = new CustomEvent(SET_BPM, {
+            detail: {bpm: bpm},
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(new_event);
     }
 
     closeTempoModal() {

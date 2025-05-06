@@ -2,7 +2,7 @@ import { View } from "./view.js"
 import { initComponents } from "./view/components.js";
 import * as Tone from "tone";
 import { Midi } from '@tonejs/midi';
-import { PLAY, PAUSE, FILE_SELECT, SLIDER_UPDATE, START_SLIDER_UPDATE, END_SLIDER_UPDATE } from "./view/components/full_screen_span/ui_bar.js";
+import { PLAY, PAUSE, FILE_SELECT, SLIDER_UPDATE, START_SLIDER_UPDATE, END_SLIDER_UPDATE, SET_BPM } from "./view/components/full_screen_span/ui_bar.js";
 
 export class Controller {
     view;
@@ -16,6 +16,7 @@ export class Controller {
     animationFrameId = null;
     isPlaying = false; // Keep track of the play state
     wasPlaying = false;
+    customBPM = 120;
 
     constructor() {
         this.view = new View();
@@ -37,6 +38,7 @@ export class Controller {
                         this.noteEvents.sort((a, b) => a.ticks - b.ticks || a.durationTicks - b.durationTicks || a.midi - b.midi);
                         // console.log("this.midi", [this.midi]);
                         Tone.getTransport().PPQ = this.midi.header.ppq;
+                        this.customBPM = this.midi.header.tempos[0].bpm;
                         this.startWindowTicks = 0;
                         this.endWindowTicks = Tone.Time(5).toTicks();
                         this.startWindowIndex = 0;
@@ -104,8 +106,8 @@ export class Controller {
 
                     try {
                         if (this.midi.header.tempos.length > 0) {
-                            Tone.getTransport().bpm.value = this.midi.header.tempos[0].bpm;
-                            this.view.setBPM(this.midi.header.tempos[0].bpm);
+                            Tone.getTransport().bpm.value = this.customBPM;
+                            this.view.setBPM(this.customBPM); // A bit silly since it will set bpm in ui bar which will come back and set bpm here. not an issue because it doesn't call play.
                         }
 
                         this.noteEvents.forEach((note) => {
@@ -177,6 +179,10 @@ export class Controller {
                 });
                 document.dispatchEvent(new_event);
             }
+        });
+
+        document.addEventListener(SET_BPM, (event) => {
+            this.customBPM = event.detail.bpm;
         });
     }
 }

@@ -1,6 +1,7 @@
 .note-canvas {
     width: 100%;
     display: block;
+    flex-grow: 1;
 }
 
 .key-canvas {

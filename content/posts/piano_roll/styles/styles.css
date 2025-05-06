@@ -21,3 +21,9 @@ full-screen-span {
     max-height: unset;
     z-index: 999; /* Ensure it's on top */
 }
+
+piano-roll-canvas {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}

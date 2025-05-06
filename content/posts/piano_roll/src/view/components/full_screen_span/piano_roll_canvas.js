@@ -1,7 +1,3 @@
-import { Ball } from "./ball.js";
-import { Note } from "./note.js";
-import * as Tone from "tone";
-
 /* CUSTOM EVENTS */
 // NA
 

@@ -46,6 +46,9 @@ featured: true
                 <iconify-icon class="play" icon="mdi:play"></iconify-icon>
                 <iconify-icon class="volume" icon="mdi:volume"></iconify-icon>
                 <iconify-icon class="metronome" icon="mdi:metronome"></iconify-icon>
+                <p class="tempo-display">
+                    120
+                </p>
             </article>
             <p class="filename-display">
                 choose file
@@ -57,5 +60,12 @@ featured: true
             </article>
         </article>
         <div class="timeline-slider"></div>
+        <article class="tempo-modal">
+            <form>
+                <label for="bpm">BPM: </label>
+                <input type="text" id="bpm-input" name="bpm"><br><br>
+                <input type="submit" value="set bpm">
+            </form>
+        </article>
     </section>
 </template>

@@ -33,4 +33,12 @@ export class View {
     drawPianoKeyboard() {
         this.pianoRollCanvas.drawPianoKeyboard();
     }
+
+    setSlider(start, end) {
+        this.uiBar.setSlider(start, end);
+    }
+
+    setBPM(bpm) {
+        this.uiBar.setBPM(bpm);
+    }
 }

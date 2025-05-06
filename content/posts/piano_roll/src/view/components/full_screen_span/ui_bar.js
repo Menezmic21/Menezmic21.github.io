@@ -31,6 +31,27 @@ export const PAUSE = "pause";
  */
 export const FILE_SELECT = "fileSelect";
 
+/**
+ * Slider Updated.
+ *
+ * @type {"sliderUpdate"}
+ */
+export const SLIDER_UPDATE = "sliderUpdate";
+
+/**
+ * Start Slider Updated.
+ *
+ * @type {"sliderUpdate"}
+ */
+export const START_SLIDER_UPDATE = "startSliderUpdate";
+
+/**
+ * End Slider Updated.
+ *
+ * @type {"sliderUpdate"}
+ */
+export const END_SLIDER_UPDATE = "endSliderUpdate";
+
 /* CUSTOM CLASS */
 
 /**
@@ -58,7 +79,10 @@ export class UIBar extends HTMLElement {
     // Private references to subcomponents that will NOT be added/removed from the DOM after initilization
     innerContainer;
     slider;
+    sliderInstance;
     fullscreenButton;
+    tempoButton;
+    tempoDisplay;
 
     // class vars
     isPlaying = false;
@@ -108,6 +132,43 @@ export class UIBar extends HTMLElement {
             throw new Error("hiddenFileButton not found");
         }
         this.hiddenFileButton = hiddenFileButton;
+
+        // Verify tempoButton
+        const tempoButton = this.shadow.querySelector(".metronome");
+        if (!(tempoButton instanceof HTMLElement)) {
+            throw new Error("tempoButton not found");
+        }
+        this.tempoButton = tempoButton;
+
+        // Verify tempoDisplay
+        const tempoDisplay = this.shadow.querySelector(".tempo-display");
+        if (!(tempoDisplay instanceof HTMLElement)) {
+            throw new Error("tempoDisplay not found");
+        }
+        this.tempoDisplay = tempoDisplay;
+
+        // TODO: Move tempo modal into its own component
+
+        // Verify tempoModal
+        const tempoModal = this.shadow.querySelector(".tempo-modal");
+        if (!(tempoModal instanceof HTMLElement)) {
+            throw new Error("tempoModal not found");
+        }
+        this.tempoModal = tempoModal;
+
+        // Verify bpmInput
+        const bpmInput = this.shadow.querySelector("#bpm-input");
+        if (!(bpmInput instanceof HTMLElement)) {
+            throw new Error("bpmInput not found");
+        }
+        this.bpmInput = bpmInput;
+
+        // Verify setBpmButton
+        const setBpmButton = this.shadow.querySelector('input[type="submit"]');
+        if (!(setBpmButton instanceof HTMLElement)) {
+            throw new Error("setBpmButton not found");
+        }
+        this.setBpmButton = setBpmButton;
     }
 
     /**
@@ -120,12 +181,10 @@ export class UIBar extends HTMLElement {
         this.controller = new AbortController();
         const options = { signal: this.controller.signal };
 
-        var range = this.shadow.querySelector('.timeline-slider');
-
-        console.log("range", [range]);
+        this.slider = this.shadow.querySelector('.timeline-slider');
             
-        noUiSlider.create(range, {
-            start: [ 0, 10 ], // Handle start position
+        this.sliderInstance = noUiSlider.create(this.slider, {
+            start: [ 0, 2 ], // Handle start position
             margin: 1, // Handles must be more than '1' apart
             connect: true, // Display a colored bar between the handles
             // direction: 'rtl', // Put '0' at the bottom of the slider
@@ -195,6 +254,86 @@ export class UIBar extends HTMLElement {
       
             this.dispatchEvent(new_event);
         });
+
+        this.slider.noUiSlider.on('slide', (values, handle, unencoded, tap, positions) => {
+            console.log("sliding");
+            const new_event = new CustomEvent(SLIDER_UPDATE, {
+                detail: {values: values},
+                bubbles: true,
+                composed: true,
+            });
+            this.dispatchEvent(new_event);
+        });
+
+        this.slider.noUiSlider.on('start', () => {
+            console.log("start sliding");
+            const new_event = new CustomEvent(START_SLIDER_UPDATE, {
+                detail: {},
+                bubbles: true,
+                composed: true,
+            });
+            this.dispatchEvent(new_event);
+        });
+        
+        this.slider.noUiSlider.on('end', () => {
+            console.log("stop sliding");
+            const new_event = new CustomEvent(END_SLIDER_UPDATE, {
+                detail: {},
+                bubbles: true,
+                composed: true,
+            });
+            this.dispatchEvent(new_event);
+        });
+
+        this.tempoButton.addEventListener('click', () => {
+            this.tempoModal.style.display = "block";
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target != this) {
+                this.closeTempoModal();
+            }
+        });
+
+        this.setBpmButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default form submission (page refresh)
+
+            const bpmValue = this.bpmInput.value;
+
+            // Call your function here, passing the BPM value
+            this.processBPM(bpmValue);
+
+            this.closeTempoModal();
+        });
+    }
+
+    setSlider(start, end) {
+        this.sliderInstance.set([start, end]);
+    }
+
+    setBPM(bpm) {
+        this.tempoDisplay.innerText = Math.round(bpm);
+    }
+
+    closeTempoModal() {
+        this.tempoModal.style.display = "none";
+    }
+
+    // TODO: Move this functionality to the controller
+    // Your function to process the BPM value
+    processBPM(bpm) {
+        console.log('BPM value entered:', bpm);
+        // Add your logic here to use the BPM value,
+        // for example, updating Tone.js transport BPM:
+        if (Tone && Tone.getTransport()) {
+            Tone.getTransport().bpm.value = parseFloat(bpm);
+            this.setBPM(bpm);
+            console.log('Tone.Transport.bpm updated to:', Tone.getTransport().bpm.value);
+        } else {
+            console.warn('Tone.js not initialized or Transport not available.');
+        }
+        // You might also want to update your view or controller here
     }
 
     /**

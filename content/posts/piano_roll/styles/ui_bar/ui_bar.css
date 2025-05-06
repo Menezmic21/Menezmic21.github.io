@@ -12,7 +12,7 @@
 .left-widget {
   display: flex;
   flex-direction: row;
-  width: 18vh; /* 3 * (1.5 + 3 + 1.5) */
+  width: 24vh; /* 4 * (1.5 + 3 + 1.5) */
   /* background-color: rgb(165, 160, 221); */
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 18vh; /* Must match left-widget: 3 * (1.5 + 3 + 1.5) */
+  width: 24vh; /* Must match left-widget: 4 * (1.5 + 3 + 1.5) */
   /* background-color: rgb(160, 205, 221); */
 }
 
@@ -75,6 +75,86 @@ iconify-icon {
 
 iconify-icon:hover {
   color: rgb(185, 185, 185);
+}
+
+.tempo-display {
+  display: inline-block;
+  width: 3vh;
+  height: 3vh;
+  font-size: 2vh; /* Make the text itself scale with the container */
+  margin: 0;
+  color: white;
+  padding-left: 0;
+  padding-right: 1.5vh;
+  text-align: center;
+  bottom: -0.5em;
+}
+
+/* Basic styling for the tempo modal */
+.tempo-modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5em; /* Slightly increased padding for better spacing */
+  background-color: floralwhite;
+  border-radius: 0.5em;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  z-index: 1010; /* Ensure it's above the modal overlay if you have one */
+}
+
+/* Style the form within the modal */
+.tempo-modal form {
+  display: flex;
+  flex-direction: column; /* Arrange labels and inputs vertically */
+  gap: 0.8em; /* Spacing between form elements */
+}
+
+/* Style the label */
+.tempo-modal label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the text input */
+.tempo-modal input[type="text"] {
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  font-size: 1em;
+}
+
+.tempo-modal input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight on focus */
+  box-shadow: 0 0 0.2em #007bff;
+}
+
+/* Style the submit button */
+.tempo-modal input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tempo-modal input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.tempo-modal input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0.2em #007bff;
+}
+
+/* Optional: Style for the line break (you might want to handle spacing with CSS instead) */
+.tempo-modal br {
+  display: none; /* Hide the <br> if using flexbox for layout */
 }
 
 .filename-display {

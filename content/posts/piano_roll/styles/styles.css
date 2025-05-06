@@ -19,5 +19,5 @@ full-screen-span {
     width: 100%;
     height: 100%;
     max-height: unset;
-    z-index: 9999; /* Ensure it's on top */
+    z-index: 999; /* Ensure it's on top */
 }

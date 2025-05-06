@@ -209,9 +209,7 @@ export class Controller {
 
         // New Event Listener for Scroll in Fullscreen
         document.addEventListener('wheel', (event) => {
-            console.log("scrolling");
             if (document.fullscreenElement) {
-                console.log("scrolling in full");
                 const percentY = -event.deltaY / window.screen.height;
 
                 const ticksDiff = this.endWindowTicks - this.startWindowTicks;

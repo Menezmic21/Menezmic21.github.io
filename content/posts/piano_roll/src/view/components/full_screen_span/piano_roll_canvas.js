@@ -40,7 +40,7 @@ export class PianoRollCanvas extends HTMLElement {
     noteCanvasHeight = 0;
     keysCanvasWidth = 0;
     keysCanvasHeight = 0;
-    lowestNote = 0; // 21;
+    lowestNote = 21; // 21;
     highestNote = 108;
     playingNotes = new Array(this.highestNote - this.lowestNote).fill(false);
 
@@ -184,6 +184,7 @@ export class PianoRollCanvas extends HTMLElement {
         }
 
         this.noteContext.beginPath();
+        const style = window.getComputedStyle(document.documentElement);
 
         // If the note is white
         if (this.isWhiteKey(note.midi)) {
@@ -194,7 +195,7 @@ export class PianoRollCanvas extends HTMLElement {
 
             // console.log("drawNoteDims", [note_x, note_y, roundedWhiteKeyWidth, note_length]);
 
-            this.noteContext.fillStyle = "rgb(230, 224, 136)";
+            this.noteContext.fillStyle = style.getPropertyValue('--left-hand-color');
             this.noteContext.roundRect(note_x,  note_y, roundedWhiteKeyWidth, -note_length, Math.floor(roundedWhiteKeyWidth/4));
             
         // If the note is black
@@ -203,7 +204,7 @@ export class PianoRollCanvas extends HTMLElement {
             const white_note_x = Math.round(white_index * whiteKeyWidth);
             const note_x = Math.floor(white_note_x - blackKeyWidth / 2);
 
-            this.noteContext.fillStyle = "rgb(185, 127, 231)";
+            this.noteContext.fillStyle = style.getPropertyValue('--right-hand-color');
             this.noteContext.roundRect(note_x, note_y, Math.floor(blackKeyWidth), -note_length, Math.floor(blackKeyWidth/4));
         }
 
@@ -218,6 +219,7 @@ export class PianoRollCanvas extends HTMLElement {
         const whiteKeyWidth = width / totalWhiteKeys;
 
         let white_index = 0;
+        const style = window.getComputedStyle(document.documentElement);
 
         // Draw the white keys
         // For each note
@@ -232,7 +234,7 @@ export class PianoRollCanvas extends HTMLElement {
                 // Draw the key
                 this.keysContext.fillStyle = "rgb(255, 255, 255)";
                 if (this.playingNotes[note]) {
-                    this.keysContext.fillStyle = "rgb(230, 224, 136)";
+                    this.keysContext.fillStyle = style.getPropertyValue('--left-hand-color');
                 }
                 this.keysContext.fillRect(key_x, 0, roundedWhiteKeyWidth, height);
 
@@ -257,6 +259,7 @@ export class PianoRollCanvas extends HTMLElement {
         const blackKeyHeight = Math.floor(height * 0.6);
 
         let white_index = 0;
+        const style = window.getComputedStyle(document.documentElement);
 
         // Draw the black keys
         // For each note
@@ -274,7 +277,7 @@ export class PianoRollCanvas extends HTMLElement {
                     // Draw the middle C marker
                     this.keysContext.beginPath();
                     this.keysContext.arc(key_x, Math.floor((blackKeyHeight + height) / 2), 5, 0, Math.PI * 2);
-                    this.keysContext.fillStyle = "rgb(0, 113, 227)";
+                    this.keysContext.fillStyle = style.getPropertyValue('--accent-color');
                     this.keysContext.fill();
                 }
 
@@ -289,7 +292,7 @@ export class PianoRollCanvas extends HTMLElement {
                 // Draw the key
                 this.keysContext.fillStyle = "rgb(0, 0, 0)";
                 if (this.playingNotes[note]) {
-                    this.keysContext.fillStyle = "rgb(185, 127, 231)";
+                    this.keysContext.fillStyle = style.getPropertyValue('--right-hand-color');
                 }
                 this.keysContext.fillRect(key_x, 0, Math.floor(blackKeyWidth), blackKeyHeight);
             }
@@ -300,5 +303,44 @@ export class PianoRollCanvas extends HTMLElement {
     drawPianoKeyboard() { // MIDI note numbers,  A2 = 45, C4 = 60
         this.drawWhiteKeys();
         this.drawBlackKeys();
+        this.drawBorder();
+        // this.drawLines();
+    }
+
+    drawBorder() {
+        const width = this.keysCanvasWidth;
+        const height = this.keysCanvasHeight;
+
+        const style = window.getComputedStyle(document.documentElement);
+        this.keysContext.fillStyle = style.getPropertyValue("--darken-secondary-color");
+        this.keysContext.fillRect(0, 0, width, Math.floor(5 * height / 100));
+    }
+
+    drawLines() {
+        const width = this.noteCanvasWidth;
+        const height = this.noteCanvasHeight;
+
+        const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
+        const whiteKeyWidth = width / totalWhiteKeys;
+
+        let white_index = 0;
+        this.noteContext.strokeStyle = "rgb(74, 74, 74)";
+
+        for (let note = this.lowestNote; note <= this.highestNote; note++) {
+            const noteInOctId = note % 12;
+            if (noteInOctId == 0 || noteInOctId == 5) {
+                // Compute the location
+                const white_key_x = Math.round(white_index * whiteKeyWidth);
+
+                this.noteContext.beginPath();
+                this.noteContext.moveTo(white_key_x, 0);
+                this.noteContext.lineTo(white_key_x, height);
+                this.noteContext.stroke();
+            }
+
+            if (this.isWhiteKey(note)) {
+                white_index++;
+            }
+        }
     }
 }

@@ -13,21 +13,18 @@
   display: flex;
   flex-direction: row;
   width: 24vh; /* 4 * (1.5 + 3 + 1.5) */
-  /* background-color: rgb(165, 160, 221); */
 }
 
 .right-widget {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 24vh; /* Must match left-widget: 4 * (1.5 + 3 + 1.5) */
-  /* background-color: rgb(160, 205, 221); */
+  width: 24vh; /* Must match left-widget */
 }
 
 .timeline-slider {
   position: relative;
   height: 2vh;
-  /* border-radius: 0.5vh; Consistent radius with height */
   margin: 1.5vh;
   border-color: transparent;
 }
@@ -37,7 +34,7 @@
 }
 
 .noUi-connect {
-  background: #a1a1a1;
+  background: var(--secondary-color);
 }
 
 /* Style for the slider handles */
@@ -48,13 +45,13 @@
   right: -1vh !important; /*  must be (width / 2) * -1 */
   top: 0 !important;
   border-radius: 50%;
-  background: rgb(0, 113, 227);
+  background: var(--accent-color);
   box-shadow: unset;
   border-color: transparent;
 }
 
 .noUi-handle:hover {
-  background: rgb(0, 81, 161);
+  background: var(--darken-accent-color);
 }
 
 .noUi-handle:before, .noUi-handle:after {
@@ -67,14 +64,14 @@ iconify-icon {
   height: 3vh;
   font-size: 3vh; /* Make the icon itself scale with the container */
   line-height: 3vh;  /* Important for vertical centering */
-  color: white;
+  color: var(--primary-color);
   padding-left: 1.5vh;
   padding-right: 1.5vh;
   cursor: pointer; /* Indicate it's clickable */
 }
 
 iconify-icon:hover {
-  color: rgb(185, 185, 185);
+  color: var(--darken-primary-color);
 }
 
 .tempo-display {
@@ -83,7 +80,7 @@ iconify-icon:hover {
   height: 3vh;
   font-size: 2vh; /* Make the text itself scale with the container */
   margin: 0;
-  color: white;
+  color: var(--primary-color);
   padding-left: 0;
   padding-right: 1.5vh;
   text-align: center;
@@ -98,7 +95,7 @@ iconify-icon:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1.5em; /* Slightly increased padding for better spacing */
-  background-color: floralwhite;
+  background-color: var(--darken-primary-color);
   border-radius: 0.5em;
   box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   z-index: 1010; /* Ensure it's above the modal overlay if you have one */
@@ -114,27 +111,27 @@ iconify-icon:hover {
 /* Style the label */
 .tempo-modal label {
   font-weight: bold;
-  color: #333;
+  color: var(--background-color);
 }
 
 /* Style the text input */
 .tempo-modal input[type="text"] {
   padding: 0.6em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 0.3em;
   font-size: 1em;
 }
 
 .tempo-modal input[type="text"]:focus {
   outline: none;
-  border-color: #007bff; /* Highlight on focus */
-  box-shadow: 0 0 0.2em #007bff;
+  border-color: var(--accent-color); /* Highlight on focus */
+  box-shadow: 0 0 0.2em var(--accent-color);
 }
 
 /* Style the submit button */
 .tempo-modal input[type="submit"] {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
   padding: 0.8em 1.5em;
   border: none;
   border-radius: 0.3em;
@@ -144,12 +141,12 @@ iconify-icon:hover {
 }
 
 .tempo-modal input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: var(--darken-accent-color);
 }
 
 .tempo-modal input[type="submit"]:focus {
   outline: none;
-  box-shadow: 0 0 0.2em #007bff;
+  box-shadow: 0 0 0.2em var(--accent-color);
 }
 
 /* Optional: Style for the line break (you might want to handle spacing with CSS instead) */
@@ -159,7 +156,7 @@ iconify-icon:hover {
 
 .filename-display {
   margin: 0;
-  color: white;
+  color: var(--primary-color);
   text-align: center;
   cursor: pointer; /* Indicate it's clickable */
   text-overflow: ellipsis;
@@ -170,5 +167,5 @@ iconify-icon:hover {
 }
 
 .filename-display:hover {
-  color: rgb(185, 185, 185);
+  color: var(--darken-primary-color);
 }

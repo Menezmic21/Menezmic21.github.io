@@ -1,3 +1,15 @@
+:root {
+    --background-color: #000000;
+    --primary-color: #ffffff;
+    --darken-primary-color: hsl(0, 0%, 80%);
+    --secondary-color: #a4a4a4;
+    --darken-secondary-color: hsl(0, 0%, 50%);
+    --accent-color: #0071e3;
+    --darken-accent-color: hsl(210, 100%, 35%);
+    --left-hand-color: #90EE90;
+    --right-hand-color: #FFB6C1;
+}
+
 full-screen-span {
     display: block;
     height: 50vh;
@@ -8,7 +20,7 @@ full-screen-span {
     height: 50vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--background-color);
     text-align: center;
 }
 

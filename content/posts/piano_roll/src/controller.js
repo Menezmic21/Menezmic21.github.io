@@ -9,9 +9,9 @@ export class Controller {
     midi = null;
     synth = null;
     noteEvents = [];
-    startWindowTime = 0;
-    endWindowTime = 5;
-    songDuration = null;
+    startWindowTicks = 0;
+    endWindowTicks = 5;
+    songDurationTicks = null;
     startWindowIndex = 0;
     animationFrameId = null;
     isPlaying = false; // Keep track of the play state
@@ -34,13 +34,14 @@ export class Controller {
                         console.log("Midi data loaded!");
                         this.noteEvents = [];
                         this.midi.tracks.forEach(track => track.notes.forEach(note => this.noteEvents.push(note)));
-                        this.noteEvents.sort((a, b) => a.time - b.time || a.duration - b.duration || a.midi - b.midi);
-                        console.log("noteEvents:", [this.noteEvents[0], this.noteEvents[0].time, this.noteEvents[0].duration, this.noteEvents[0].ticks, this.noteEvents[0].durationTicks]);
-                        this.startWindowTime = 0;
-                        this.endWindowTime = 5;
+                        this.noteEvents.sort((a, b) => a.ticks - b.ticks || a.durationTicks - b.durationTicks || a.midi - b.midi);
+                        // console.log("this.midi", [this.midi]);
+                        Tone.getTransport().PPQ = this.midi.header.ppq;
+                        this.startWindowTicks = 0;
+                        this.endWindowTicks = Tone.Time(5).toTicks();
                         this.startWindowIndex = 0;
                         const lastNote = this.noteEvents[this.noteEvents.length - 1];
-                        this.songDuration = lastNote.time + lastNote.duration;
+                        this.songDurationTicks = lastNote.ticks + lastNote.durationTicks;
                     } catch (error) {
                         console.error("Error parsing MIDI:", error);
                         alert("Error parsing MIDI file. Please ensure it is a valid MIDI file.");
@@ -54,16 +55,16 @@ export class Controller {
             view.clearNoteCanvas();
 
             // Find the starting index for notes within the current window
-            while (this.startWindowIndex < this.noteEvents.length && this.noteEvents[this.startWindowIndex].time + this.noteEvents[this.startWindowIndex].duration < this.startWindowTime) {
+            while (this.startWindowIndex < this.noteEvents.length && this.noteEvents[this.startWindowIndex].ticks + this.noteEvents[this.startWindowIndex].durationTicks < this.startWindowTicks) {
                 this.startWindowIndex++;
             }
 
             for (let i = this.startWindowIndex; i < this.noteEvents.length; i++) {
                 const note = this.noteEvents[i];
-                if (note.time + note.duration >= this.startWindowTime && note.time < this.endWindowTime) {
-                    view.drawNote(this.startWindowTime, this.endWindowTime, Tone.getTransport().seconds, note);
+                if (note.ticks + note.durationTicks >= this.startWindowTicks && note.ticks < this.endWindowTicks) {
+                    view.drawNote(this.startWindowTicks, this.endWindowTicks, Tone.getTransport().ticks, note);
                 }
-                if (note.time >= this.endWindowTime) {
+                if (note.ticks >= this.endWindowTicks) {
                     break;
                 }
             }
@@ -78,11 +79,11 @@ export class Controller {
                 this.isPlaying = false;
             }
 
-            const elapsedTime = Tone.getTransport().seconds - this.startWindowTime;
-            this.startWindowTime = Tone.getTransport().seconds;
-            this.endWindowTime += elapsedTime;
+            const elapsedTicks = Tone.getTransport().ticks - this.startWindowTicks;
+            this.startWindowTicks = Tone.getTransport().ticks;
+            this.endWindowTicks += elapsedTicks;
 
-            this.view.setSlider(100 * this.startWindowTime / this.songDuration, 100 * this.endWindowTime / this.songDuration);
+            this.view.setSlider(100 * this.startWindowTicks / this.songDurationTicks, 100 * this.endWindowTicks / this.songDurationTicks);
 
             if (this.isPlaying) { // Only request animation frame if playing
                 this.animationFrameId = requestAnimationFrame(() => drawFrame(view));
@@ -90,7 +91,7 @@ export class Controller {
         };
 
         document.addEventListener(PLAY, async () => {
-            console.log("time", [Tone.getTransport().seconds]);
+            console.log("ticks", [Tone.getTransport().ticks]);
             if (this.midi) {
                 if (!this.synth) {
                     this.synth = new Tone.PolySynth(Tone.Synth).toDestination();
@@ -99,7 +100,7 @@ export class Controller {
                 if (!this.isPlaying) { // Only reset and schedule if not already playing
                     Tone.getTransport().cancel();
                     Tone.getTransport().stop();
-                    Tone.getTransport().seconds = Tone.Time(this.startWindowTime).toSeconds(); // Set transport to current window start
+                    Tone.getTransport().seconds = Tone.Time(this.startWindowTicks, 'i').toSeconds(); // Set transport to current window start
 
                     try {
                         if (this.midi.header.tempos.length > 0) {
@@ -110,7 +111,7 @@ export class Controller {
                         this.noteEvents.forEach((note) => {
                             Tone.getTransport().schedule((time) => {
                                 this.synth.triggerAttackRelease(note.name, note.duration, time, note.velocity);
-                            }, note.time);
+                            }, `${note.ticks}i`);
                         });
 
                         if (this.animationFrameId) {
@@ -134,7 +135,7 @@ export class Controller {
         });
 
         document.addEventListener(PAUSE, () => {
-            console.log("time", [Tone.getTransport().seconds]);
+            console.log("ticks", [Tone.getTransport().ticks]);
             Tone.getTransport().pause();
             this.isPlaying = false;
             if (this.animationFrameId) {
@@ -145,9 +146,9 @@ export class Controller {
 
         document.addEventListener(SLIDER_UPDATE, (event) => {
             console.log("SLIDER_UPDATE");
-            this.startWindowTime = event.detail.values[0] * this.songDuration / 100;
-            Tone.getTransport().seconds = this.startWindowTime;
-            this.endWindowTime = event.detail.values[1] * this.songDuration / 100;
+            this.startWindowTicks = event.detail.values[0] * this.songDurationTicks / 100;
+            Tone.getTransport().seconds = Tone.Time(this.startWindowTicks, 'i').toSeconds();
+            this.endWindowTicks = event.detail.values[1] * this.songDurationTicks / 100;
             this.startWindowIndex = 0; // Reset the index when the window changes
             this.view.clearNoteCanvas(); // Optionally clear immediately for responsiveness
             drawFrame(this.view); // Force a redraw of the canvas

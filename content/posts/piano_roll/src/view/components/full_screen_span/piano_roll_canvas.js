@@ -159,7 +159,7 @@ export class PianoRollCanvas extends HTMLElement {
         return 7 * octDiff + numWhiteFromC[endInOctId] - numWhiteFromC[startInOctId] + 1;
     }
 
-    drawNote(startWindowTime, endWindowTime, time, note) {
+    drawNote(startWindowTicks, endWindowTicks, ticks, note) {
         const width = this.noteCanvasWidth;
         const height = this.noteCanvasHeight;
 
@@ -168,18 +168,18 @@ export class PianoRollCanvas extends HTMLElement {
         const totalWhiteKeys = this.countWhiteKeys(this.lowestNote, this.highestNote);
         const whiteKeyWidth = width / totalWhiteKeys;
         const blackKeyWidth = whiteKeyWidth * 0.6;
-        const note_length = Math.floor(height * note.duration / (endWindowTime - startWindowTime));
+        const note_length = Math.floor(height * note.durationTicks / (endWindowTicks - startWindowTicks));
 
         // console.log("noteConsts", [totalWhiteKeys, whiteKeyWidth, blackKeyWidth, note_length]);
 
         const white_index = this.countWhiteKeys(this.lowestNote, note.midi);
 
-        const note_y = height - Math.floor(height * (note.time - startWindowTime) / (endWindowTime - startWindowTime));
+        const note_y = height - Math.floor(height * (note.ticks - startWindowTicks) / (endWindowTicks - startWindowTicks));
 
-        // console.log("drawNote", [startWindowTime, endWindowTime, time, note]);
+        // console.log("drawNote", [startWindowTicks, endWindowTicks, ticks, note]);
 
         // If the note is currently being played
-        if (note.time <= time) {
+        if (note.ticks <= ticks) {
             this.playingNotes[note.midi] = true;
         }
 

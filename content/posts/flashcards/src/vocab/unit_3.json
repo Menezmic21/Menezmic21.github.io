@@ -1,0 +1,154 @@
+{
+    "korean_3": {
+        "title": "Korean - Unit 3: Daily Routine",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "먹다",
+                "a": "to eat"
+            },
+            {
+                "q": "마시다",
+                "a": "to drink"
+            },
+            {
+                "q": "자다",
+                "a": "to sleep"
+            },
+            {
+                "q": "일어나다",
+                "a": "to wake up"
+            },
+            {
+                "q": "가다",
+                "a": "to go"
+            },
+            {
+                "q": "오다",
+                "a": "to come"
+            },
+            {
+                "q": "아침",
+                "a": "morning"
+            },
+            {
+                "q": "점심",
+                "a": "lunch"
+            },
+            {
+                "q": "저녁",
+                "a": "evening / dinner"
+            },
+            {
+                "q": "집",
+                "a": "house / home"
+            },
+            {
+                "q": "아침",
+                "a": "morning/breakfast"
+            },
+            {
+                "q": "점심",
+                "a": "afternoon/lunch"
+            },
+            {
+                "q": "저녁",
+                "a": "evening/dinner"
+            },
+            {
+                "q": "음료수",
+                "a": "beverage"
+            },
+            {
+                "q": "식당",
+                "a": "restaurant"
+            },
+            {
+                "q": "메뉴",
+                "a": "menu"
+            },
+            {
+                "q": "주문하다",
+                "a": "to order"
+            }
+        ]
+    },
+    "japanese_3": {
+        "title": "Japanese - Unit 3: Daily Routine",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "たべる",
+                "a": "to eat"
+            },
+            {
+                "q": "のむ",
+                "a": "to drink"
+            },
+            {
+                "q": "ねる",
+                "a": "to sleep"
+            },
+            {
+                "q": "おきる",
+                "a": "to wake up"
+            },
+            {
+                "q": "いく",
+                "a": "to go"
+            },
+            {
+                "q": "くる",
+                "a": "to come"
+            },
+            {
+                "q": "あさ",
+                "a": "morning"
+            },
+            {
+                "q": "ひる",
+                "a": "noon / lunch"
+            },
+            {
+                "q": "よる",
+                "a": "evening / night"
+            },
+            {
+                "q": "いえ",
+                "a": "house / home"
+            },
+            {
+                "q": "あさ",
+                "a": "morning"
+            },
+            {
+                "q": "あさごはん",
+                "a": "breakfast"
+            },
+            {
+                "q": "ひるごはん",
+                "a": "lunch"
+            },
+            {
+                "q": "ばんごはん",
+                "a": "dinner"
+            },
+            {
+                "q": "のみもの",
+                "a": "beverage"
+            },
+            {
+                "q": "レストラン",
+                "a": "restaurant"
+            },
+            {
+                "q": "メニュー",
+                "a": "menu"
+            },
+            {
+                "q": "ちゅうもんする",
+                "a": "to order"
+            }
+        ]
+    }
+}

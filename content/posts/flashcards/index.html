@@ -1,0 +1,38 @@
+﻿---
+title: "Language Flashcards"
+date: 2026-04-30T12:00:00+00:00
+description: "Progressive web app for learning Korean/Japanese vocabulary"
+author: "Michael Menezes"
+tags: ["Code", "Education"]
+theme: "light"
+featured: true
+---
+
+<link rel="stylesheet" href="./styles/styles.css">
+<script defer type="module" src="./src/main.js"></script>
+
+<div id="app-container">
+    <div id="unit-selection">
+        <h2>Select Unit</h2>
+        <select id="unit-select">
+        </select>
+        <button id="start-btn">Start</button>
+    </div>
+
+    <div id="flashcard-practice" style="display: none;">
+        <h2 id="current-unit-title">Unit</h2>
+        <button id="flip-btn">Flip</button>
+        <div class="flashcard">
+            <button id="tts-btn" title="Listen">🔊</button>
+            <p id="question-text">...</p>
+        </div>
+        <div class="input-area">
+            <input type="text" id="answer-input" placeholder="Type your answer" autocomplete="off" />
+            <button id="submit-btn">Check</button>
+        </div>
+        <p id="feedback-msg"></p>
+        <div class="stats">
+            <span id="score">Score: 0</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+{
+    "korean_5": {
+        "title": "Korean - Unit 5: Adjectives",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "크다",
+                "a": "to be big"
+            },
+            {
+                "q": "작다",
+                "a": "to be small"
+            },
+            {
+                "q": "좋다",
+                "a": "to be good"
+            },
+            {
+                "q": "나쁘다",
+                "a": "to be bad"
+            },
+            {
+                "q": "덥다",
+                "a": "to be hot (weather)"
+            },
+            {
+                "q": "춥다",
+                "a": "to be cold (weather)"
+            },
+            {
+                "q": "어렵다",
+                "a": "to be difficult"
+            },
+            {
+                "q": "쉽다",
+                "a": "to be easy"
+            },
+            {
+                "q": "재미있다",
+                "a": "to be interesting / fun"
+            },
+            {
+                "q": "재미없다",
+                "a": "to be uninteresting / boring"
+            },
+            {
+                "q": "어제",
+                "a": "yesterday"
+            },
+            {
+                "q": "오늘",
+                "a": "today"
+            },
+            {
+                "q": "내일",
+                "a": "tomorrow"
+            },
+            {
+                "q": "월요일",
+                "a": "Monday"
+            },
+            {
+                "q": "화요일",
+                "a": "Tuesday"
+            },
+            {
+                "q": "수요일",
+                "a": "Wednesday"
+            },
+            {
+                "q": "목요일",
+                "a": "Thursday"
+            },
+            {
+                "q": "금요일",
+                "a": "Friday"
+            },
+            {
+                "q": "토요일",
+                "a": "Saturday"
+            },
+            {
+                "q": "일요일",
+                "a": "Sunday"
+            }
+        ]
+    },
+    "japanese_5": {
+        "title": "Japanese - Unit 5: Adjectives",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "おおきい",
+                "a": "big"
+            },
+            {
+                "q": "ちいさい",
+                "a": "small"
+            },
+            {
+                "q": "いい",
+                "a": "good"
+            },
+            {
+                "q": "わるい",
+                "a": "bad"
+            },
+            {
+                "q": "あつい",
+                "a": "hot (weather)"
+            },
+            {
+                "q": "さむい",
+                "a": "cold (weather)"
+            },
+            {
+                "q": "むずかしい",
+                "a": "difficult"
+            },
+            {
+                "q": "やさしい",
+                "a": "easy"
+            },
+            {
+                "q": "おもしろい",
+                "a": "interesting / fun"
+            },
+            {
+                "q": "つまらない",
+                "a": "uninteresting / boring"
+            },
+            {
+                "q": "きのう",
+                "a": "yesterday"
+            },
+            {
+                "q": "きょう",
+                "a": "today"
+            },
+            {
+                "q": "あした",
+                "a": "tomorrow"
+            },
+            {
+                "q": "げつようび",
+                "a": "Monday"
+            },
+            {
+                "q": "かようび",
+                "a": "Tuesday"
+            },
+            {
+                "q": "すいようび",
+                "a": "Wednesday"
+            },
+            {
+                "q": "もくようび",
+                "a": "Thursday"
+            },
+            {
+                "q": "きんようび",
+                "a": "Friday"
+            },
+            {
+                "q": "どようび",
+                "a": "Saturday"
+            },
+            {
+                "q": "にちようび",
+                "a": "Sunday"
+            }
+        ]
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "korean_6": {
+        "title": "Korean - Unit 6: Family",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "가족",
+                "a": "family"
+            },
+            {
+                "q": "어머니",
+                "a": "mother"
+            },
+            {
+                "q": "아버지",
+                "a": "father"
+            },
+            {
+                "q": "형",
+                "a": "older brother (for males)"
+            },
+            {
+                "q": "누나",
+                "a": "older sister (for males)"
+            },
+            {
+                "q": "동생",
+                "a": "younger sibling"
+            },
+            {
+                "q": "할머니",
+                "a": "grandmother"
+            },
+            {
+                "q": "할아버지",
+                "a": "grandfather"
+            },
+            {
+                "q": "남편",
+                "a": "husband"
+            },
+            {
+                "q": "아내",
+                "a": "wife"
+            },
+            {
+                "q": "머리",
+                "a": "head/hair"
+            },
+            {
+                "q": "눈",
+                "a": "eye"
+            },
+            {
+                "q": "코",
+                "a": "nose"
+            },
+            {
+                "q": "입",
+                "a": "mouth"
+            },
+            {
+                "q": "귀",
+                "a": "ear"
+            },
+            {
+                "q": "팔",
+                "a": "arm"
+            },
+            {
+                "q": "다리",
+                "a": "leg"
+            },
+            {
+                "q": "병원",
+                "a": "hospital"
+            },
+            {
+                "q": "의사",
+                "a": "doctor"
+            }
+        ]
+    },
+    "japanese_6": {
+        "title": "Japanese - Unit 6: Family",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "かぞく",
+                "a": "family"
+            },
+            {
+                "q": "はは",
+                "a": "mother"
+            },
+            {
+                "q": "ちち",
+                "a": "father"
+            },
+            {
+                "q": "あに",
+                "a": "older brother"
+            },
+            {
+                "q": "あね",
+                "a": "older sister"
+            },
+            {
+                "q": "いもうと",
+                "a": "younger sister"
+            },
+            {
+                "q": "そぼ",
+                "a": "grandmother"
+            },
+            {
+                "q": "そふ",
+                "a": "grandfather"
+            },
+            {
+                "q": "おっと",
+                "a": "husband"
+            },
+            {
+                "q": "つま",
+                "a": "wife"
+            },
+            {
+                "q": "あたま",
+                "a": "head"
+            },
+            {
+                "q": "め",
+                "a": "eye"
+            },
+            {
+                "q": "はな",
+                "a": "nose"
+            },
+            {
+                "q": "くち",
+                "a": "mouth"
+            },
+            {
+                "q": "みみ",
+                "a": "ear"
+            },
+            {
+                "q": "うで",
+                "a": "arm"
+            },
+            {
+                "q": "あし",
+                "a": "leg"
+            },
+            {
+                "q": "びょういん",
+                "a": "hospital"
+            },
+            {
+                "q": "いしゃ",
+                "a": "doctor"
+            }
+        ]
+    }
+}

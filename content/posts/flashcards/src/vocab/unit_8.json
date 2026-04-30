@@ -1,0 +1,150 @@
+{
+    "korean_8": {
+        "title": "Korean - Unit 8: Time",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "오늘",
+                "a": "today"
+            },
+            {
+                "q": "내일",
+                "a": "tomorrow"
+            },
+            {
+                "q": "어제",
+                "a": "yesterday"
+            },
+            {
+                "q": "지금",
+                "a": "now"
+            },
+            {
+                "q": "시간",
+                "a": "time"
+            },
+            {
+                "q": "시",
+                "a": "o'clock"
+            },
+            {
+                "q": "분",
+                "a": "minute"
+            },
+            {
+                "q": "일",
+                "a": "day"
+            },
+            {
+                "q": "월",
+                "a": "month"
+            },
+            {
+                "q": "년",
+                "a": "year"
+            },
+            {
+                "q": "책상",
+                "a": "desk"
+            },
+            {
+                "q": "의자",
+                "a": "chair"
+            },
+            {
+                "q": "컴퓨터",
+                "a": "computer"
+            },
+            {
+                "q": "숙제",
+                "a": "homework"
+            },
+            {
+                "q": "시험",
+                "a": "exam"
+            },
+            {
+                "q": "공부하다",
+                "a": "to study"
+            },
+            {
+                "q": "질문",
+                "a": "question"
+            }
+        ]
+    },
+    "japanese_8": {
+        "title": "Japanese - Unit 8: Time",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "きょう",
+                "a": "today"
+            },
+            {
+                "q": "あした",
+                "a": "tomorrow"
+            },
+            {
+                "q": "きのう",
+                "a": "yesterday"
+            },
+            {
+                "q": "いま",
+                "a": "now"
+            },
+            {
+                "q": "じかん",
+                "a": "time"
+            },
+            {
+                "q": "じ",
+                "a": "o'clock"
+            },
+            {
+                "q": "ふん",
+                "a": "minute"
+            },
+            {
+                "q": "にち",
+                "a": "day"
+            },
+            {
+                "q": "がつ",
+                "a": "month"
+            },
+            {
+                "q": "ねん",
+                "a": "year"
+            },
+            {
+                "q": "つくえ",
+                "a": "desk"
+            },
+            {
+                "q": "いす",
+                "a": "chair"
+            },
+            {
+                "q": "パソコン",
+                "a": "computer"
+            },
+            {
+                "q": "しゅくだい",
+                "a": "homework"
+            },
+            {
+                "q": "しけん",
+                "a": "exam"
+            },
+            {
+                "q": "べんきょうする",
+                "a": "to study"
+            },
+            {
+                "q": "しつもん",
+                "a": "question"
+            }
+        ]
+    }
+}

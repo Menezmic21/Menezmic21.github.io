@@ -1,0 +1,158 @@
+{
+    "korean_10": {
+        "title": "Korean - Unit 10: Travel",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "여행",
+                "a": "travel / trip"
+            },
+            {
+                "q": "기차",
+                "a": "train"
+            },
+            {
+                "q": "비행기",
+                "a": "airplane"
+            },
+            {
+                "q": "버스",
+                "a": "bus"
+            },
+            {
+                "q": "역",
+                "a": "station"
+            },
+            {
+                "q": "표",
+                "a": "ticket"
+            },
+            {
+                "q": "호텔",
+                "a": "hotel"
+            },
+            {
+                "q": "사진",
+                "a": "photo"
+            },
+            {
+                "q": "찍다",
+                "a": "to take (a photo)"
+            },
+            {
+                "q": "바다",
+                "a": "sea / ocean"
+            },
+            {
+                "q": "강아지",
+                "a": "puppy/dog"
+            },
+            {
+                "q": "고양이",
+                "a": "cat"
+            },
+            {
+                "q": "나무",
+                "a": "tree"
+            },
+            {
+                "q": "꽃",
+                "a": "flower"
+            },
+            {
+                "q": "하늘",
+                "a": "sky"
+            },
+            {
+                "q": "바다",
+                "a": "sea"
+            },
+            {
+                "q": "산",
+                "a": "mountain"
+            },
+            {
+                "q": "바람",
+                "a": "wind"
+            }
+        ]
+    },
+    "japanese_10": {
+        "title": "Japanese - Unit 10: Travel",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "りょこう",
+                "a": "travel / trip"
+            },
+            {
+                "q": "でんしゃ",
+                "a": "train"
+            },
+            {
+                "q": "ひこうき",
+                "a": "airplane"
+            },
+            {
+                "q": "バス",
+                "a": "bus"
+            },
+            {
+                "q": "えき",
+                "a": "station"
+            },
+            {
+                "q": "きっぷ",
+                "a": "ticket"
+            },
+            {
+                "q": "ホテル",
+                "a": "hotel"
+            },
+            {
+                "q": "しゃしん",
+                "a": "photo"
+            },
+            {
+                "q": "とる",
+                "a": "to take (a photo)"
+            },
+            {
+                "q": "うみ",
+                "a": "sea / ocean"
+            },
+            {
+                "q": "いぬ",
+                "a": "dog"
+            },
+            {
+                "q": "ねこ",
+                "a": "cat"
+            },
+            {
+                "q": "き",
+                "a": "tree"
+            },
+            {
+                "q": "はな",
+                "a": "flower"
+            },
+            {
+                "q": "そら",
+                "a": "sky"
+            },
+            {
+                "q": "うみ",
+                "a": "sea"
+            },
+            {
+                "q": "やま",
+                "a": "mountain"
+            },
+            {
+                "q": "かぜ",
+                "a": "wind"
+            }
+        ]
+    }
+}

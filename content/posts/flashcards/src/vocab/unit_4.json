@@ -1,0 +1,158 @@
+{
+    "korean_4": {
+        "title": "Korean - Unit 4: Locations & Directions",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "앞",
+                "a": "front"
+            },
+            {
+                "q": "뒤",
+                "a": "back"
+            },
+            {
+                "q": "위",
+                "a": "top / above"
+            },
+            {
+                "q": "아래",
+                "a": "bottom / below"
+            },
+            {
+                "q": "은행",
+                "a": "bank"
+            },
+            {
+                "q": "우체국",
+                "a": "post office"
+            },
+            {
+                "q": "병원",
+                "a": "hospital"
+            },
+            {
+                "q": "식당",
+                "a": "restaurant"
+            },
+            {
+                "q": "공원",
+                "a": "park"
+            },
+            {
+                "q": "학교",
+                "a": "school"
+            },
+            {
+                "q": "기차",
+                "a": "train"
+            },
+            {
+                "q": "비행기",
+                "a": "airplane"
+            },
+            {
+                "q": "공항",
+                "a": "airport"
+            },
+            {
+                "q": "역",
+                "a": "station"
+            },
+            {
+                "q": "표",
+                "a": "ticket"
+            },
+            {
+                "q": "호텔",
+                "a": "hotel"
+            },
+            {
+                "q": "여행",
+                "a": "travel"
+            },
+            {
+                "q": "지도",
+                "a": "map"
+            }
+        ]
+    },
+    "japanese_4": {
+        "title": "Japanese - Unit 4: Locations & Directions",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "まえ",
+                "a": "front"
+            },
+            {
+                "q": "うしろ",
+                "a": "back"
+            },
+            {
+                "q": "うえ",
+                "a": "top / above"
+            },
+            {
+                "q": "した",
+                "a": "bottom / below"
+            },
+            {
+                "q": "ぎんこう",
+                "a": "bank"
+            },
+            {
+                "q": "ゆうびんきょく",
+                "a": "post office"
+            },
+            {
+                "q": "びょういん",
+                "a": "hospital"
+            },
+            {
+                "q": "レストラン",
+                "a": "restaurant"
+            },
+            {
+                "q": "こうえん",
+                "a": "park"
+            },
+            {
+                "q": "がっこう",
+                "a": "school"
+            },
+            {
+                "q": "でんしゃ",
+                "a": "train"
+            },
+            {
+                "q": "ひこうき",
+                "a": "airplane"
+            },
+            {
+                "q": "くうこう",
+                "a": "airport"
+            },
+            {
+                "q": "えき",
+                "a": "station"
+            },
+            {
+                "q": "きっぷ",
+                "a": "ticket"
+            },
+            {
+                "q": "ホテル",
+                "a": "hotel"
+            },
+            {
+                "q": "りょこう",
+                "a": "travel"
+            },
+            {
+                "q": "ちず",
+                "a": "map"
+            }
+        ]
+    }
+}

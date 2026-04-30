@@ -1,0 +1,150 @@
+{
+    "korean_9": {
+        "title": "Korean - Unit 9: Hobbies",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "취미",
+                "a": "hobby"
+            },
+            {
+                "q": "음악",
+                "a": "music"
+            },
+            {
+                "q": "영화",
+                "a": "movie"
+            },
+            {
+                "q": "운동",
+                "a": "exercise / sports"
+            },
+            {
+                "q": "책",
+                "a": "book"
+            },
+            {
+                "q": "읽다",
+                "a": "to read"
+            },
+            {
+                "q": "보다",
+                "a": "to see / watch"
+            },
+            {
+                "q": "듣다",
+                "a": "to listen"
+            },
+            {
+                "q": "하다",
+                "a": "to do"
+            },
+            {
+                "q": "수영",
+                "a": "swimming"
+            },
+            {
+                "q": "크다",
+                "a": "to be big"
+            },
+            {
+                "q": "작다",
+                "a": "to be small"
+            },
+            {
+                "q": "많다",
+                "a": "to be many"
+            },
+            {
+                "q": "적다",
+                "a": "to be few"
+            },
+            {
+                "q": "좋다",
+                "a": "to be good"
+            },
+            {
+                "q": "나쁘다",
+                "a": "to be bad"
+            },
+            {
+                "q": "재미있다",
+                "a": "to be fun"
+            }
+        ]
+    },
+    "japanese_9": {
+        "title": "Japanese - Unit 9: Hobbies",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "しゅみ",
+                "a": "hobby"
+            },
+            {
+                "q": "おんがく",
+                "a": "music"
+            },
+            {
+                "q": "えいが",
+                "a": "movie"
+            },
+            {
+                "q": "うんどう",
+                "a": "exercise / sports"
+            },
+            {
+                "q": "ほん",
+                "a": "book"
+            },
+            {
+                "q": "よむ",
+                "a": "to read"
+            },
+            {
+                "q": "みる",
+                "a": "to see / watch"
+            },
+            {
+                "q": "きく",
+                "a": "to listen"
+            },
+            {
+                "q": "する",
+                "a": "to do"
+            },
+            {
+                "q": "すいえい",
+                "a": "swimming"
+            },
+            {
+                "q": "おおきい",
+                "a": "big"
+            },
+            {
+                "q": "ちいさい",
+                "a": "small"
+            },
+            {
+                "q": "おおい",
+                "a": "many"
+            },
+            {
+                "q": "すくない",
+                "a": "few"
+            },
+            {
+                "q": "いい",
+                "a": "good"
+            },
+            {
+                "q": "わるい",
+                "a": "bad"
+            },
+            {
+                "q": "おもしろい",
+                "a": "fun"
+            }
+        ]
+    }
+}

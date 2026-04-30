@@ -1,0 +1,262 @@
+{
+    "korean_2": {
+        "title": "Korean - Unit 2: Shopping & Numbers",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "영",
+                "a": "zero"
+            },
+            {
+                "q": "일",
+                "a": "one"
+            },
+            {
+                "q": "이",
+                "a": "two"
+            },
+            {
+                "q": "삼",
+                "a": "three"
+            },
+            {
+                "q": "사",
+                "a": "four"
+            },
+            {
+                "q": "오",
+                "a": "five"
+            },
+            {
+                "q": "육",
+                "a": "six"
+            },
+            {
+                "q": "칠",
+                "a": "seven"
+            },
+            {
+                "q": "팔",
+                "a": "eight"
+            },
+            {
+                "q": "구",
+                "a": "nine"
+            },
+            {
+                "q": "십",
+                "a": "ten"
+            },
+            {
+                "q": "십일",
+                "a": "eleven"
+            },
+            {
+                "q": "십이",
+                "a": "twelve"
+            },
+            {
+                "q": "이십",
+                "a": "twenty"
+            },
+            {
+                "q": "삼십",
+                "a": "thirty"
+            },
+            {
+                "q": "오십",
+                "a": "fifty"
+            },
+            {
+                "q": "백",
+                "a": "hundred"
+            },
+            {
+                "q": "천",
+                "a": "thousand"
+            },
+            {
+                "q": "가게",
+                "a": "store"
+            },
+            {
+                "q": "시장",
+                "a": "market"
+            },
+            {
+                "q": "할인",
+                "a": "discount"
+            },
+            {
+                "q": "영수증",
+                "a": "receipt"
+            },
+            {
+                "q": "얼마예요",
+                "a": "how much is it?"
+            },
+            {
+                "q": "돈",
+                "a": "money"
+            },
+            {
+                "q": "가방",
+                "a": "bag"
+            },
+            {
+                "q": "옷",
+                "a": "clothes"
+            },
+            {
+                "q": "비싸다",
+                "a": "expensive"
+            },
+            {
+                "q": "싸다",
+                "a": "cheap"
+            },
+            {
+                "q": "이것",
+                "a": "this thing"
+            },
+            {
+                "q": "계산해 주세요",
+                "a": "check, please"
+            },
+            {
+                "q": "카드",
+                "a": "credit card"
+            }
+        ]
+    },
+    "japanese_2": {
+        "title": "Japanese - Unit 2: Shopping & Numbers",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "ぜろ",
+                "a": "zero"
+            },
+            {
+                "q": "いち",
+                "a": "one"
+            },
+            {
+                "q": "に",
+                "a": "two"
+            },
+            {
+                "q": "さん",
+                "a": "three"
+            },
+            {
+                "q": "よん",
+                "a": "four"
+            },
+            {
+                "q": "ご",
+                "a": "five"
+            },
+            {
+                "q": "ろく",
+                "a": "six"
+            },
+            {
+                "q": "なな",
+                "a": "seven"
+            },
+            {
+                "q": "はち",
+                "a": "eight"
+            },
+            {
+                "q": "きゅう",
+                "a": "nine"
+            },
+            {
+                "q": "じゅう",
+                "a": "ten"
+            },
+            {
+                "q": "じゅういち",
+                "a": "eleven"
+            },
+            {
+                "q": "じゅうに",
+                "a": "twelve"
+            },
+            {
+                "q": "にじゅう",
+                "a": "twenty"
+            },
+            {
+                "q": "さんじゅう",
+                "a": "thirty"
+            },
+            {
+                "q": "ごじゅう",
+                "a": "fifty"
+            },
+            {
+                "q": "ひゃく",
+                "a": "hundred"
+            },
+            {
+                "q": "せん",
+                "a": "thousand"
+            },
+            {
+                "q": "いくら",
+                "a": "how much is it?"
+            },
+            {
+                "q": "おかね",
+                "a": "money"
+            },
+            {
+                "q": "かばん",
+                "a": "bag"
+            },
+            {
+                "q": "ふく",
+                "a": "clothes"
+            },
+            {
+                "q": "たかい",
+                "a": "expensive"
+            },
+            {
+                "q": "やすい",
+                "a": "cheap"
+            },
+            {
+                "q": "これ",
+                "a": "this thing"
+            },
+            {
+                "q": "みせ",
+                "a": "store"
+            },
+            {
+                "q": "いちば",
+                "a": "market"
+            },
+            {
+                "q": "わりびき",
+                "a": "discount"
+            },
+            {
+                "q": "れシート",
+                "a": "receipt"
+            },
+            {
+                "q": "おかいけい",
+                "a": "check, please"
+            },
+            {
+                "q": "カード",
+                "a": "credit card"
+            }
+        ]
+    }
+}

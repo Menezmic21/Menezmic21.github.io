@@ -1,0 +1,146 @@
+{
+    "korean_7": {
+        "title": "Korean - Unit 7: Food & Drink",
+        "languageRegex": "ko-KR",
+        "words": [
+            {
+                "q": "물",
+                "a": "water"
+            },
+            {
+                "q": "밥",
+                "a": "rice / meal"
+            },
+            {
+                "q": "빵",
+                "a": "bread"
+            },
+            {
+                "q": "고기",
+                "a": "meat"
+            },
+            {
+                "q": "생선",
+                "a": "fish"
+            },
+            {
+                "q": "야채",
+                "a": "vegetables"
+            },
+            {
+                "q": "과일",
+                "a": "fruit"
+            },
+            {
+                "q": "맛있다",
+                "a": "to be delicious"
+            },
+            {
+                "q": "맛없다",
+                "a": "to be unappetizing"
+            },
+            {
+                "q": "카페",
+                "a": "cafe"
+            },
+            {
+                "q": "아버지",
+                "a": "father"
+            },
+            {
+                "q": "어머니",
+                "a": "mother"
+            },
+            {
+                "q": "형",
+                "a": "older brother (for men)"
+            },
+            {
+                "q": "오빠",
+                "a": "older brother (for women)"
+            },
+            {
+                "q": "누나",
+                "a": "older sister (for men)"
+            },
+            {
+                "q": "언니",
+                "a": "older sister (for women)"
+            },
+            {
+                "q": "동생",
+                "a": "younger sibling"
+            }
+        ]
+    },
+    "japanese_7": {
+        "title": "Japanese - Unit 7: Food & Drink",
+        "languageRegex": "ja-JP",
+        "words": [
+            {
+                "q": "みず",
+                "a": "water"
+            },
+            {
+                "q": "ごはん",
+                "a": "rice / meal"
+            },
+            {
+                "q": "パン",
+                "a": "bread"
+            },
+            {
+                "q": "にく",
+                "a": "meat"
+            },
+            {
+                "q": "さかな",
+                "a": "fish"
+            },
+            {
+                "q": "やさい",
+                "a": "vegetables"
+            },
+            {
+                "q": "くだもの",
+                "a": "fruit"
+            },
+            {
+                "q": "おいしい",
+                "a": "delicious"
+            },
+            {
+                "q": "まずい",
+                "a": "unappetizing"
+            },
+            {
+                "q": "カフェ",
+                "a": "cafe"
+            },
+            {
+                "q": "おとうさん",
+                "a": "father"
+            },
+            {
+                "q": "おかあさん",
+                "a": "mother"
+            },
+            {
+                "q": "おにいさん",
+                "a": "older brother"
+            },
+            {
+                "q": "おねえさん",
+                "a": "older sister"
+            },
+            {
+                "q": "おとうと",
+                "a": "younger brother"
+            },
+            {
+                "q": "いもうと",
+                "a": "younger sister"
+            }
+        ]
+    }
+}
